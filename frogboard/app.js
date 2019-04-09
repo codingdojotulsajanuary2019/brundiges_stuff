@@ -4,29 +4,38 @@ var express = require('express');
 var app = express();
 // Require body-parser (to receive post data from clients)
 var bodyParser = require('body-parser');
-const flash = require('express-flash');
+var session = require('express-session');
+var flash = require('express-flash');
 
-// Requre mongoose and connects to local mongo server
+// Require mongoose and connects to local mongo server
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/basic_mongoose');
 
 var FrogSchema = new mongoose.Schema({
-	name: { type: String, required: true, minLength: 2 },
-	color: { type: String, required: true, minLength: 2 },
-	stage: { type: String, required: true, minLength: 2 },
-	roundness: { type: Number, required: true },
+	name: { type: String, required: [true, "Name must be provided!"], minLength: 2 },
+	color: { type: String, required: [true, "Color must be provided!"], minLength: 2 },
+	stage: { type: String, required: [true, "Stage must be provided!"], minLength: 2 },
+	roundness: { type: Number, required: [true, "Roundness must be provided!"] },
 },
 	{
 		timestamps: true
 	});
 mongoose.model('Frog', FrogSchema);
 var Frog = mongoose.model('Frog');
+var opts = { runValidators: true };
 
 app.use(bodyParser.urlencoded({ extended: true }));
 var path = require('path');
 app.use(express.static(path.join(__dirname, './static')));
 app.set('views', path.join(__dirname, './views'));
 app.set('view engine', 'ejs');
+app.use(session({
+	secret: 'frog',
+	resave: false,
+	saveUninitialized: true,
+	// cookie: { maxAge: 60000 }
+}));
+app.use(flash());
 
 // ### Routes ###
 
@@ -60,7 +69,7 @@ app.get('/frogs/show/:id', function (req, res) {
 			res.redirect('/');
 		} else {
 			console.log('Unerring request! Frog retrieved!');
-			console.log(frog[0]);
+			// console.log(frog[0]);
 			res.render('show', { frog: frog[0] });
 		}
 	});
@@ -75,7 +84,7 @@ app.get('/frogs/edit/:id', function (req, res) {
 			res.redirect('/');
 		} else {
 			console.log('Unerring request! Frog retrieved!');
-			console.log(frog[0]);
+			// console.log(frog[0]);
 			res.render('edit', { frog: frog[0] });
 		}
 	});
@@ -89,7 +98,10 @@ app.post('/frogs', function (req, res) {
 	frog.save(function (err) {
 		if (err) {
 			console.log('Errant input!', err);
-			res.redirect('/');
+			for (var key in err.errors) {
+				req.flash('frog', err.errors[key].message);
+			}
+			res.redirect('/frogs/new');
 		} else {
 			console.log('Unerring input! Frog added!');
 			res.redirect('/');
@@ -100,10 +112,14 @@ app.post('/frogs', function (req, res) {
 // Edit frog
 app.post('/frogs/update/:id', function (req, res) {
 	console.log("Updating frog with id " + req.params.id);
-	Frog.update({ _id: req.params.id }, { name: req.body.name, color: req.body.color, stage: req.body.stage, roundness: req.body.roundness }, function (err, frog) {
+
+	Frog.update({ _id: req.params.id }, { name: req.body.name, color: req.body.color, stage: req.body.stage, roundness: req.body.roundness }, opts, function (err, frog) {
 		if (err) {
-			console.log('Errant request!: ', err);
-			res.redirect('/');
+			console.log('Errant update request!: ', err);
+			for (var key in err.errors) {
+				req.flash('edit', err.errors[key].message);
+			}
+			res.redirect('/frogs/edit/' + req.params.id);
 		} else {
 			console.log('Unerring request! Frog updated!', frog);
 			res.redirect('/');

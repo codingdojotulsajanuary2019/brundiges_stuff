@@ -26,6 +26,12 @@
 	<div class="row">
 		<div class="col">
 		<h4>Edit frog <%= frog.name %></h4>	
+
+		<% if(messages.edit) { %>
+		<% for (var x of messages.edit) { %>
+			<h5><%= x %></h5>
+		<% }} %>
+
 		<form action="/frogs/update/<%= frog._id %>" method="POST">
 			<div class="row input-group mb-3">
 				<div class="col-sm-4">

@@ -26,7 +26,12 @@
 	</div>
 	<div class="row">
 		<div class="col">
-			<h4>New frog</h4>	
+			<h4>New frog</h4>
+			<% JSON.stringify(messages) %>
+			<% if(messages.frog) { %>
+				<% for (var x of messages.frog) { %>
+					<h5><%= x %></h5>
+			<% }} %>
 			<form action="/frogs" method="POST">
 				<div class="row input-group mb-3">
 					<div class="col-sm-4">
