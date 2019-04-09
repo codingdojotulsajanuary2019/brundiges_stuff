@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>FrogBoard</title>
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<!-- JS Styles -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+	        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	        crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+	        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+	        crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+	        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+	        crossorigin="anonymous"></script>
+</head>
+
+<body>
+<div class="container">
+	<div class="row top mb-3">
+		<h2>Welcome to MessageFrog.com</h2>
+	</div>
+	<div class="row">
+		<div class="col">
+		
+		<form action="/message" method="POST">
+			<div class="row input-group mb-3">
+				<div class="col-sm-4">
+					<input name="name" type="text" class="form-control mb-3" placeholder="Name">
+					<textarea name="message" class="form-control mb-3" id="exampleFormControlTextarea1" rows="3">Your message here</textarea>
+					<input type="submit" value="Submit" class="btn btn-success">
+				</div>
+			</div>
+		</form>
+
+		<hr class="my-3">
+
+		<% for (var x in messages) { %>
+		<hr class="my-2">
+		<h3><%= messages[x].name %> said:</h3>
+		<p><%= messages[x].message %></p>
+		<div class="col">
+			<% for (var y in messages[x].comments) { %>
+			<% if (messages[x].comments[y].comment) { %>
+			<h5><%= messages[x].comments[y].name %> said:</h5>
+			<p><%= messages[x].comments[y].comment %></p>
+			<% }} %>
+		</div>
+		<form action="/comment" method="POST">
+			<div class="row input-group mb-3">
+				<div class="col-sm-4">
+					<input name="name" type="text" class="form-control mb-3" placeholder="Name">
+					<textarea name="comment" class="form-control mb-3" id="exampleFormControlTextarea1" rows="2">Your comment here</textarea>
+					<input type="submit" value="Submit Comment" class="btn btn-secondary">
+					<input name = "message" type="hidden" value="<%= messages[x]._id %>">
+				</div>
+			</div>
+		</form>
+
+
+		<% } %>
+
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
