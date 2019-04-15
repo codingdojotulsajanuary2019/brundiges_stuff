@@ -1,7 +1,7 @@
 <div class="container app">
     <!--The content below is only a placeholder and can be replaced.-->
     <h2>Welcome to {{ title }}!</h2>
-    <!-- <button (click)="getTasksFromService()">Get Tasks</button> -->
+    <button (click)="getTasksFromService()">Get Tasks</button>
 
     <form (submit)="onSubmit()">
         <label for="newTask.title">Title</label>
@@ -16,6 +16,7 @@
         <p>Name: {{task.title}} | Desc: {{task.description}}</p>
         <button (click)="showEditWindow(task._id, task.title, task.description)">Edit Task</button>
         <button (click)="onDelete(task._id)">Delete Task</button>
+        <button (click)="getOneFromService(task._id)">Show Task</button>
     </div>
     <form *ngIf="update" (submit)="onUpdate()">
         <h3>Update Task:</h3>
@@ -26,5 +27,7 @@
         <input type="hidden" name="newTask._id" [(ngModel)]="newTask._id" />
         <input type="submit" value="Update Task" />
     </form>
+    <app-task *ngIf="task" [task]="task"></app-task>
+    <!-- <p *ngIf="task">Title: {{task.title}}</p> -->
 
 </div>

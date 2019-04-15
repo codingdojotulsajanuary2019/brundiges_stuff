@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
 
         this.newTask = { title: "", description: "", completed: false }
         this.updateTask = { _id: "", title: "", description: "", completed: false }
-        this.getTasksFromService();
+        // this.getTasksFromService();
     }
 
     getTasksFromService() {
@@ -38,8 +38,8 @@ export class AppComponent implements OnInit {
 
         let observable = this._service.getOne(title);
         observable.subscribe(data => {
-            console.log("Got a task with id " + title, data)
             this.task = data['task']
+            console.log("Got a task with id " + title, this.task)
         });
     }
 
@@ -76,6 +76,7 @@ export class AppComponent implements OnInit {
             console.log("Update request unerrant!", data)
             this.updateTask = { _id: "", title: "", description: "", completed: false }
             this.getTasksFromService()
+            this.update = false;
         });
     }
 }
