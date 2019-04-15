@@ -1,0 +1,31 @@
+body{
+	background-color: #ebebeb;
+}
+*{
+    font-family: roboto;
+}
+
+.container{
+	margin: 0 auto;
+	margin-bottom: 25px;
+	align-content: center;
+    vertical-align: bottom;
+    /* padding: 20px; */
+	width: 480px;
+	min-height: 480px;
+	background-color: white;
+}
+
+.app{
+    border: magenta 1px dotted 
+}
+
+p{
+	margin-bottom: 8px;
+}
+img{
+    max-width:500px;
+}
+a{
+text-align: right;
+}

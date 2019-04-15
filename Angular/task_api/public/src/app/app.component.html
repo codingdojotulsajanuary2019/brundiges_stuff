@@ -1,0 +1,30 @@
+<div class="container app">
+    <!--The content below is only a placeholder and can be replaced.-->
+    <h2>Welcome to {{ title }}!</h2>
+    <!-- <button (click)="getTasksFromService()">Get Tasks</button> -->
+
+    <form (submit)="onSubmit()">
+        <label for="newTask.title">Title</label>
+        <input type="text" name="newTask.title" [(ngModel)]="newTask.title" />
+        <label for="newTask.description">Description</label>
+        <input type="text" name="newTask.description" [(ngModel)]="newTask.description" />
+        <input type="submit" value="Create Task" />
+    </form>
+
+    <h3>All Tasks:</h3>
+    <div *ngFor="let task of tasks">
+        <p>Name: {{task.title}} | Desc: {{task.description}}</p>
+        <button (click)="showEditWindow(task._id, task.title, task.description)">Edit Task</button>
+        <button (click)="onDelete(task._id)">Delete Task</button>
+    </div>
+    <form *ngIf="update" (submit)="onUpdate()">
+        <h3>Update Task:</h3>
+        <label for="updateTask.title">Title</label>
+        <input type="text" name="updateTask.title" [(ngModel)]="updateTask.title" />
+        <label for="updateTask.description">Description</label>
+        <input type="text" name="updateTask.description" [(ngModel)]="updateTask.description" />
+        <input type="hidden" name="newTask._id" [(ngModel)]="newTask._id" />
+        <input type="submit" value="Update Task" />
+    </form>
+
+</div>
