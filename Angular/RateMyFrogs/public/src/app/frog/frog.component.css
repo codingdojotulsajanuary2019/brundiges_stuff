@@ -1,0 +1,7 @@
+img {
+    object-fit: cover;
+    width:275px;
+    height:275px;
+    border-radius: 15px;
+    border: #59a923 4px solid;
+  }

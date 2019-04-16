@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="top row">
+        <h1>Rate My Frogs</h1>
+    </div>
+    <div class="row">
+        <div class="col col-md-4 mb-4">
+            <h3 class="mb-4">Submit Frogs</h3>
+            <form (submit)="createFrog()">
+                <div class="input-group mb-3">
+                    <div class="col">
+                        <input name="newFrog.name" class="form-control mb-3" placeholder="Name" type="text"
+                            [(ngModel)]="newFrog.name" />
+                        <input name="newFrog.url" class="form-control mb-3" placeholder="URL" type="text"
+                            [(ngModel)]="newFrog.url" />
+                        <input type="submit" value="Create Frog" class="btn btn-success" />
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col allFrogs">
+            <h3 class="mb-3">All Frogs</h3>
+            <div *ngFor="let frog of frogs">
+                <div class="row mb-4">
+                    <div class="col col-sm-4">
+                        <img src="{{frog.url}}" alt="{{frog.name}}" (click)="selectFrog(frog._id)">
+                    </div>
+                    <div class="col">
+                        <h4 class="mb-3">{{frog.name}}</h4>
+                        <form (submit)="rateFrog(frog._id)">
+                            <div class="input-group">
+                                <div class="col">
+                                    <input name="newRating.review" class="form-control mb-3" placeholder="review"
+                                        type="text" [(ngModel)]="newRating.review" />
+                                    <select name="newRating.rating" class="form-control mb-3"
+                                        [(ngModel)]="newRating.rating">
+                                        <option value="5">*****</option>
+                                        <option value="4">****</option>
+                                        <option value="3">***</option>
+                                        <option value="2">**</option>
+                                        <option value="1">*</option>
+                                    </select>
+                                    <input type="submit" value="Rate Frog" class="btn btn-secondary" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-frog *ngIf="oneFrog.name != ''" [oneFrog]="oneFrog"></app-frog>
+</div>

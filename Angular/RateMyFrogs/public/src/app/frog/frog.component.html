@@ -1,0 +1,14 @@
+<hr class="my-4">
+<div class="row">
+    <div class="col col-sm-4 mb-4">
+        <!-- <hr class="my-4"> -->
+        <img src="{{oneFrog.url}}" alt="{{oneFrog.name}}">
+    </div>
+    <div class="col col-md mb-4">
+        <h3>{{oneFrog.name}} | {{oneFrog.stars}}</h3>
+        <div *ngFor="let review of oneFrog.reviews">
+            <h4>{{review.rating}}</h4>
+            <p>{{review.review}}</p>
+        </div>
+    </div>
+</div>
