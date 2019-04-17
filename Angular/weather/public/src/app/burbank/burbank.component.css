@@ -1,0 +1,6 @@
+img {
+    object-fit: cover;
+    max-height:200px;
+    border-radius: 10px;
+    border: #59a923 4px solid;
+  }

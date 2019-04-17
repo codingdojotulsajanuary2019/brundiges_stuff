@@ -1,0 +1,25 @@
+<h3>Ledger</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Action</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Value</th>
+            <th scope="col">Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of ledger">
+            <th scope="row">{{row.id}}</th>
+            <td>{{row.action}}</td>
+            <td>{{row.amount}}</td>
+            <td>{{row.value}}</td>
+            <td>
+                <form (submit)="goHome(row.id)">
+                    <input type="submit" value="Show" class="btn btn-secondary" />
+                </form>
+            </td>
+        </tr>
+    </tbody>
+</table>

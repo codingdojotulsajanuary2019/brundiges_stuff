@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="top row">
+        <h1>Weather Forecast</h1>
+    </div>
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-success" [routerLink]="['/seattle']">Seattle</button>
+        </div>
+        <div class="col">
+            <button class="btn btn-success" [routerLink]="['/sanjose']">San Jose</button>
+        </div>
+        <div class="col">
+            <button class="btn btn-success" [routerLink]="['/burbank']">Burbank</button>
+        </div>
+        <div class="col">
+            <button class="btn btn-success" [routerLink]="['/dallas']">Dallas</button>
+        </div>
+        <div class="col">
+            <button class="btn btn-success" [routerLink]="['/wton']">Washington</button>
+        </div>
+        <div class="col">
+            <button class="btn btn-success" [routerLink]="['/chicago']">Chicago</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <hr class="my-h5">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

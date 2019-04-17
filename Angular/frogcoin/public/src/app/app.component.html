@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="top row">
+        <h1>Frog Coin</h1>
+    </div>
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-success" [routerLink]="['/home']">Home</button>
+        </div>
+        <div class="col">
+            <button class="btn btn-success" [routerLink]="['/mine']">Mine Coins</button>
+        </div>
+        <div class="col">
+                <button class="btn btn-success" [routerLink]="['/buy']">Buy Coins</button>
+            </div>
+        <div class="col">
+            <button class="btn btn-success" [routerLink]="['/sell']">Sell Coins</button>
+        </div>
+        <div class="col">
+            <button class="btn btn-success" [routerLink]="['/ledger']">Browse Ledger</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <hr class="my-h5">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

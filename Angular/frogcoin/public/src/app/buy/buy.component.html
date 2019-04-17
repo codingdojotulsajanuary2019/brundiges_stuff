@@ -1,0 +1,13 @@
+<h3>Buy Frog Coin</h3>
+<p>Current Frog Coin value: {{c['value']}}</p>
+<p>Number of Frog Coins owned: {{c['wallet']}}</p>
+
+<form (submit)="buyCoin()">
+    <div class="input-group">
+        <div class="col col-sm-3">
+            <input name="coins" class="form-control mb-3" placeholder="Number of Coins"
+                type="text" [(ngModel)]="coins"/>
+            <input type="submit" value="Buy Frog Coin" class="btn btn-primary" />
+        </div>
+    </div>
+</form>

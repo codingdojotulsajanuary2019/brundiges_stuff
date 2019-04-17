@@ -1,0 +1,13 @@
+<h3>Mine Frog Coin</h3>
+<p>To mine a Frog Coin, input the value fibonacci sequence no. {{seq}} </p>
+<p>Current coin total: {{c['wallet']}}</p>
+
+<form (submit)="mineCoin()">
+    <div class="input-group">
+        <div class="col col-sm-3">
+            <input name="input" class="form-control mb-3" placeholder="Solution" type="text"
+                [(ngModel)]="input" />
+            <input type="submit" value="Buy Frog Coin" class="btn btn-primary" />
+        </div>
+    </div>
+</form>
