@@ -1,0 +1,10 @@
+<h3>New Component</h3>
+<form (submit)="onSubmit()">
+    <label for="newProduct.title">Title</label>
+    <input type="text" name="newProduct.name" [(ngModel)]="newProduct.name" />
+    <label for="newProduct.url">URL</label>
+    <input type="text" name="newProduct.url" [(ngModel)]="newProduct.url" />
+    <label for="newProduct.price">Price</label>
+    <input type="text" name="newProduct.price" [(ngModel)]="newProduct.price" />
+    <input type="submit" value="Create Task" />
+</form>

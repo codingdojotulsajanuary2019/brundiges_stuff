@@ -1,0 +1,18 @@
+<h3 class="mb-3">All Products</h3>
+<div *ngFor="let product of products">
+    <div class="row mb-4">
+        <div class="col col-sm-4">
+            <img src="{{product.url}}" alt="{{product.name}}">
+        </div>
+        <div class="col">
+            <h4>{{product.name}}</h4>
+            <h5>${{product.price}}</h5>
+            <form (submit)="editProduct(product._id)">
+                <input type="submit" value="Edit" class="btn btn-secondary mb-2" />
+            </form>
+            <form (submit)="deleteProduct(product._id)">
+                <input type="submit" value="Delete" class="btn btn-danger" />
+            </form>
+        </div>
+    </div>
+</div>

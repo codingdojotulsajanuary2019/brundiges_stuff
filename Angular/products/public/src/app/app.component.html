@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="top row">
+        <h1>Product Manager</h1>
+    </div>
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-primary" [routerLink]="['']">Home</button>
+        </div>
+        <div class="col">
+            <button class="btn btn-primary" [routerLink]="['/product']">All Products</button>
+        </div>
+        <div class="col">
+            <button class="btn btn-primary" [routerLink]="['/product/new']">Create Product</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <hr class="my-h5">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

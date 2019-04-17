@@ -1,0 +1,10 @@
+<h3>Edit Component</h3>
+<form (submit)="onSubmit()">
+        <label for="updateProduct.title">Title</label>
+        <input type="text" name="updateProduct.name" [(ngModel)]="updateProduct.name" />
+        <label for="updateProduct.url">URL</label>
+        <input type="text" name="updateProduct.url" [(ngModel)]="updateProduct.url" />
+        <label for="updateProduct.price">Price</label>
+        <input type="text" name="updateProduct.price" [(ngModel)]="updateProduct.price" />
+        <input type="submit" value="Update Task" />
+    </form>
