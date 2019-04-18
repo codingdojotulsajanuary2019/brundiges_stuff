@@ -1,16 +1,16 @@
 const mongoose = require('mongoose');
-const Product = mongoose.model('Product');
+const Note = mongoose.model('Note');
 var opts = { runValidators: true };
 
 module.exports = {
     serve: (req, res, next) => {
         console.log("Serving file");
         
-        res.sendFile("C:/Users/Geoff/Documents/GitHub/03 - MEAN/brundiges_stuff/Angular/products/public/dist/public/index.html");
+        res.sendFile("C:/Users/Geoff/Documents/GitHub/03 - MEAN/brundiges_stuff/Angular/noteanon/public/dist/public/index.html");
     },
     index: (req, res) => {
         console.log("All products served")
-        Product.find({}, (err, products) => {
+        Note.find({},(err, products) => {
             if (err) {
                 res.json({ message: false, error: err });
             } else {
@@ -22,7 +22,7 @@ module.exports = {
         let newFrog = req.body;
         console.log("Attempting to create new product.", newFrog);
 
-        const products = new Product(newFrog);
+        const products = new Note(newFrog);
         products.save((err) => {
             if (err) {
                 res.json({ message: false, error: err });
@@ -35,7 +35,7 @@ module.exports = {
         const id = req.params.id;
         console.log("Deleting product", req);
 
-        Product.findOneAndDelete({ _id: id }, (err, product) => {
+        Note.findOneAndDelete({ _id: id }, (err, product) => {
             if (err) {
                 res.json({ message: false, error: err });
             } else {
@@ -47,7 +47,7 @@ module.exports = {
         
         const id = req.params.id;
         console.log("Getting product with id " + id);
-        Product.findOne({ _id: id }, (err, product) => {
+        Note.findOne({ _id: id }, (err, product) => {
             if (err) {
                 res.json({ message: false, error: err });
             } else {
@@ -58,7 +58,7 @@ module.exports = {
     update: (req, res) => {
         console.log("Updating product " + req.body.name);
 
-        Product.findOne({ _id: req.params.id },function (err, product){
+        Note.findOne({ _id: req.params.id },function (err, product){
             fields = Object.keys(req.body);
             fields.forEach(element => {
                 product[element] = req.body[element];
