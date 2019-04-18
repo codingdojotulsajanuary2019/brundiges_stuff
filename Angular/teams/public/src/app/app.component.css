@@ -1,0 +1,69 @@
+*{
+    font-family: roboto;
+}
+
+h1,h2,h3,h4,h5,h6{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+img {
+    object-fit: cover;
+    width:200px;
+    height:200px;
+    border-radius: 10px;
+    border: #256c8d 4px solid;
+  }
+
+.container{
+	margin: 0 auto;
+	margin-bottom: 25px;
+	align-content: center;
+	vertical-align: bottom;
+	width: 960px;
+	min-height: 480px;
+    background-color: #f0f0f0;
+    /* background-color: magenta; */
+	border-radius: 0px 0px 30px 30px;
+	border: #256c8d 4px solid;
+}
+
+.allFrogs{
+    max-height: 490px;
+    overflow: auto;
+}
+
+p{
+	margin-bottom: 8px;
+}
+img{
+    max-width:500px;
+}
+a{
+text-align: right;
+}
+.top{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	background-color: #256c8d;
+	color: white;
+	margin-bottom: 15px;
+}
+.longboi{
+    width: 500px;
+}
+
+.failure{
+    color: #c42f1a;
+    border-color: #c42f1a;
+}
+
+.btn-primary{
+    background-color: #256c8d;
+    border-color: #256c8d
+}
+.btn-primary:hover{
+    background-color: #18485e;
+    border-color: #18485e
+}

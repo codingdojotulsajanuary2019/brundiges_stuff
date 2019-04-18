@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col col-sm">
+        <button class="btn btn-primary mb-4" [routerLink]="['/players/list']">List</button>
+    </div>
+    <div class="col col-sm">
+        <button class="btn btn-secondary mb-4">Add Players</button>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col col-md-5">
+        <h3 class="mb-3">Add Player</h3>
+        <p *ngIf="valid != ''">{{valid}}</p>
+        <form (submit)="onSubmit()">
+            <div class="input-group mb-3">
+                <div class="col">
+                    <input name="newFrog.name" class="form-control mb-3" placeholder="Name" type="text"
+                        [(ngModel)]="newFrog.name" />
+                    <input name="newFrog.position" class="form-control mb-3" placeholder="Position" type="text"
+                        [(ngModel)]="newFrog.position" />
+                    <input type="submit" value="Create Frog" class="btn btn-primary" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

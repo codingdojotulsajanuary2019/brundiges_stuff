@@ -1,0 +1,29 @@
+.btn-primary{
+    background-color: #256c8d;
+    border-color: #256c8d
+}
+.btn-primary:hover{
+    color: white;
+    background-color: #18485e;
+    border-color: #18485e
+}
+
+.btn-danger{
+    color: white;
+	background-color: #c42f1a;
+}
+
+.btn-danger:hover{
+    color: white;
+	background-color: #942314;
+}
+
+.btn-warning{
+    color: white;
+	background-color: #e7b53b;
+}
+
+.btn-warning:hover{
+    color: white;
+	background-color: #b99333;
+}

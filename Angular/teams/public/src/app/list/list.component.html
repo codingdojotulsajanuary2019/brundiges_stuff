@@ -1,0 +1,28 @@
+<button class="btn btn-secondary mb-4">List</button>
+<button class="btn btn-primary mb-4" [routerLink]="['/players/add']">Add Players</button>
+
+<div class="row mb-4">
+    <div class="col">
+        <h3 class="mb-3">All Players</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Position</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let player of players">
+                    <td>{{player.name}}</td>
+                    <td>{{player.position}}</td>
+                    <td>
+                        <form (submit)="delete(player.id)">
+                            <input type="submit" value="Delete" class="btn btn-danger" />
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

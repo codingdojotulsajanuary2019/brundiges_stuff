@@ -1,0 +1,52 @@
+<h3>Player Status - Game {{path+1}}</h3>
+
+<div class="row">
+    <div class="col col-sm">
+        <button class="btn btn-{{game[0]}} mb-4" [routerLink]="['/players/game/1']">Game One</button>
+    </div>
+    <div class="col col-sm">
+        <button class="btn btn-{{game[1]}} mb-4" [routerLink]="['/players/game/2']">Game Two</button>
+    </div>
+    <div class="col col-sm">
+        <button class="btn btn-{{game[2]}} mb-4" [routerLink]="['/players/game/3']">Game Three</button>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col">
+        <h3 class="mb-3">All Players</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Position</th>
+                    <th scope="col">Actions</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let player of players">
+                    <td>{{player.name}}</td>
+                    <td>{{player.position}}</td>
+                    <td>
+                        <button *ngIf="player.games[path]==0" type="submit" class="btn btn-primary">Playing</button>
+                        <button *ngIf="player.games[path]!=0" (click)="onUpdate(player, 0)" type="submit" value="Playing"
+                            class="btn btn-light">Playing</button>
+                    </td>
+                    <td>
+                        <button *ngIf="player.games[path]==1" type="submit" class="btn btn-danger">Not Playing</button>
+                        <button *ngIf="player.games[path]!=1" (click)="onUpdate(player, 1)" type="submit" value="Playing"
+                            class="btn btn-light">Not
+                            Playing</button>
+                    </td>
+                    <td>
+                        <button *ngIf="player.games[path]==2" type="submit" class="btn btn-warning">Undecided</button>
+                        <button *ngIf="player.games[path]!=2" (click)="onUpdate(player, 2)" type="submit" value="Playing"
+                            class="btn btn-light">Undecided</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

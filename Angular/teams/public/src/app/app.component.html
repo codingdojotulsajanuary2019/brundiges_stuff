@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="top row">
+        <h1>Team Manager</h1>
+    </div>
+    <div class="row">
+        <div class="col col-sm">
+            <button class="btn btn-primary" [routerLink]="['/players/list']">Manage Players</button>
+        </div>
+        <div class="col col-sm">
+            <button class="btn btn-primary" [routerLink]="['/players/game/1']">Manage Statuses</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <hr class="my-h5">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
