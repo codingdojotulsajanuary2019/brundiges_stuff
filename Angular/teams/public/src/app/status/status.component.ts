@@ -50,8 +50,6 @@ export class StatusComponent implements OnInit {
         observable.subscribe(data => {
             console.log("Updated player!", data)
             this.getAllFromService()
-        });
-        
+        });   
     }
-
 }

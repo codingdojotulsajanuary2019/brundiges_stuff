@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const path = require('path');
 const fs = require('fs');
 
-mongoose.connect('mongodb://localhost/products');
+mongoose.connect('mongodb://localhost/frogs');
 
 // create a variable that points to the models folder
 var models_path = path.join(__dirname, './../models');
