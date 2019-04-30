@@ -117,6 +117,7 @@ module.exports = {
     getWords: (req, res) => {
         const str = req.params.str.toUpperCase();
         console.log(getFormattedDate() + " | Finding words that match pattern " + str);
+
         var q = 'SELECT word FROM xwords ';
         q += parseSearchStr(str);
         q += 'length = ' + str.length + ' ORDER BY word ASC';
@@ -126,9 +127,13 @@ module.exports = {
             if (err) {
                 console.log("Errant request!", err);
                 res.json({ message: false, data: err });
+            } else if (data.rowCount <= 0) {
+                // console.log("Query successful but no rows were found!");
+                res.json({ message: false, err: "Query successful but no rows were returned for pattern '" + str + "'!" });
             } else {
                 // console.log("Success! Returning data!");
                 // Extracts each word from its dictionary and adds it to an array
+
                 var words = []
                 data.rows.forEach(word => {
                     words.push(word.word)
@@ -145,8 +150,8 @@ module.exports = {
         }
         if (req.body['word']) {
             console.log("Attempting to create single new word", req.body['word']);
-            let word = scrubWord(req.body['word'], que, 1);
-            que = createWord(word);
+            let word = scrubWord(req.body['word'][0]);
+            que = createWord(word, que, 1);
         }
         if (req.body['words']) {
             console.log("Attempting to create new words by list", req.body['words']);
@@ -203,7 +208,7 @@ module.exports = {
                 res.json({ message: false, err: err });
             } else if (data.rowCount <= 0) {
                 // console.log("Query successful but no rows were removed");
-                res.json({ message: false, err: "Query successful but no rows were returned. Be aware that the database is by no means comprehensive, but also case sensitive and stores words in all caps" });
+                res.json({ message: false, err: "Query successful but no rows were returned for word '" + word + "'. Be aware that the database is by no means comprehensive, but also case sensitive and stores words in all caps" });
             } else {
                 // console.log("Word found successfully!");
                 res.json({ message: true, data: data.rows });
