@@ -39,6 +39,11 @@ class Entity {
     // Move from one spot to an adjacent one 
     // recieves integer dir. 0-north, 1-south, 2-east, 3-west
     // recieves a reference to map
+
+    go(){
+
+    }
+
     move(dir, map) {
         var oldSpot = this.spot;
         // console.log("Moving in direction " + dir);
@@ -165,9 +170,11 @@ class Entity {
     track(map){
         if(map[this.spot.YCoord][this.spot.XCoord].entityInZone != null){
             let dir = map[this.spot.YCoord][this.spot.XCoord].entityInZone.dir;
-            this.move(dir, map);
+            return dir;
+            // this.move(dir, map);
         } else {
-            console.log("Lost track of player!");
+            console.log("Player not found!");
+            return -1;
         }
     }
 
@@ -233,8 +240,6 @@ compileMap(map);
 var one = map[4][2];
 var two = map[1][4];
 var thr = map[2][8];
-
-// console.log(one);
 
 var player = new Entity("Chungus", '@ ', true, one);
 var skeleton1 = new Entity("Gnarly Skeleton", 'S ', false, two);
