@@ -5,7 +5,6 @@ using System.Globalization;
 using System.Collections.Generic;
 using AspMvc.Models;
 
-
 namespace AspMvc.Controllers
 {
 	public class MvcController : Controller
@@ -64,6 +63,29 @@ namespace AspMvc.Controllers
 			niceUsers.Add(someUser);
 
 			return View("Users", niceUsers);
+		}
+
+		[HttpGet]
+		[Route("form")]
+		public ViewResult Form()
+		{
+			return View("Survey");
+		}
+
+		[HttpPost]
+		[Route("submit")]
+		public ViewResult SurveySubmit(Survey survey)
+		{
+			System.Console.WriteLine("Formbly submitted!");
+			System.Console.WriteLine(survey.Name);
+			System.Console.WriteLine(survey.Location);
+			System.Console.WriteLine(survey.Language);
+			System.Console.WriteLine(survey.Comment);
+			// ViewBag.Name = survey.Name;
+			// ViewBag.Location = survey.Location;
+			// ViewBag.Language = survey.Language;
+			// ViewBag.Comment = survey.Comment;
+			return View("Results", survey);
 		}
 
 	}

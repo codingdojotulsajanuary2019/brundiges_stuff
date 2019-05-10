@@ -38,3 +38,5 @@ C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\AspMVC\obj\Debug\netcorea
 C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\AspMVC\obj\Debug\netcoreapp2.1\Razor\Views\Mvc\User.g.cshtml.cs
 C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\AspMVC\obj\Debug\netcoreapp2.1\Razor\Views\Mvc\Numbers.g.cshtml.cs
 C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\AspMVC\obj\Debug\netcoreapp2.1\Razor\Views\Mvc\Users.g.cshtml.cs
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\AspMVC\obj\Debug\netcoreapp2.1\Razor\Views\Mvc\Results.g.cshtml.cs
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\AspMVC\obj\Debug\netcoreapp2.1\Razor\Views\Mvc\Survey.g.cshtml.cs
