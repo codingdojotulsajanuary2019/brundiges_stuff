@@ -1,0 +1,33 @@
+body{
+	background-color: whitesmoke;
+}
+
+.container{
+	margin: 0 auto;
+	margin-bottom: 25px;
+	align-content: center;
+	vertical-align: bottom;
+	width: 960px;
+	min-height: 480px;
+	background-color: white;
+}
+
+img{
+    max-width:300px;
+    border: black 3px solid;
+}
+
+.top{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 10px;
+	margin-bottom: 20px;
+	background-color: #28a745;
+	color: white;
+}
+.top a{
+	color: white;
+	font-size: 1.75rem;
+	font-weight: 300;
+	margin-bottom: 8px;
+}

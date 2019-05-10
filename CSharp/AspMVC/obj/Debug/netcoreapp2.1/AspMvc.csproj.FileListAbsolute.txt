@@ -1,0 +1,14 @@
+C:\Users\Geoff\Google Drive\Important Stuff\CD 2019 Stuff\04 - C Sharp\asp\AspMVC\bin\Debug\netcoreapp2.1\AspMvc.deps.json
+C:\Users\Geoff\Google Drive\Important Stuff\CD 2019 Stuff\04 - C Sharp\asp\AspMVC\bin\Debug\netcoreapp2.1\AspMvc.runtimeconfig.json
+C:\Users\Geoff\Google Drive\Important Stuff\CD 2019 Stuff\04 - C Sharp\asp\AspMVC\bin\Debug\netcoreapp2.1\AspMvc.runtimeconfig.dev.json
+C:\Users\Geoff\Google Drive\Important Stuff\CD 2019 Stuff\04 - C Sharp\asp\AspMVC\bin\Debug\netcoreapp2.1\AspMvc.dll
+C:\Users\Geoff\Google Drive\Important Stuff\CD 2019 Stuff\04 - C Sharp\asp\AspMVC\bin\Debug\netcoreapp2.1\AspMvc.pdb
+C:\Users\Geoff\Google Drive\Important Stuff\CD 2019 Stuff\04 - C Sharp\asp\AspMVC\obj\Debug\netcoreapp2.1\AspMvc.csprojAssemblyReference.cache
+C:\Users\Geoff\Google Drive\Important Stuff\CD 2019 Stuff\04 - C Sharp\asp\AspMVC\obj\Debug\netcoreapp2.1\AspMvc.csproj.CoreCompileInputs.cache
+C:\Users\Geoff\Google Drive\Important Stuff\CD 2019 Stuff\04 - C Sharp\asp\AspMVC\obj\Debug\netcoreapp2.1\AspMvc.RazorAssemblyInfo.cache
+C:\Users\Geoff\Google Drive\Important Stuff\CD 2019 Stuff\04 - C Sharp\asp\AspMVC\obj\Debug\netcoreapp2.1\AspMvc.RazorAssemblyInfo.cs
+C:\Users\Geoff\Google Drive\Important Stuff\CD 2019 Stuff\04 - C Sharp\asp\AspMVC\obj\Debug\netcoreapp2.1\AspMvc.AssemblyInfoInputs.cache
+C:\Users\Geoff\Google Drive\Important Stuff\CD 2019 Stuff\04 - C Sharp\asp\AspMVC\obj\Debug\netcoreapp2.1\AspMvc.AssemblyInfo.cs
+C:\Users\Geoff\Google Drive\Important Stuff\CD 2019 Stuff\04 - C Sharp\asp\AspMVC\obj\Debug\netcoreapp2.1\AspMvc.RazorTargetAssemblyInfo.cache
+C:\Users\Geoff\Google Drive\Important Stuff\CD 2019 Stuff\04 - C Sharp\asp\AspMVC\obj\Debug\netcoreapp2.1\AspMvc.dll
+C:\Users\Geoff\Google Drive\Important Stuff\CD 2019 Stuff\04 - C Sharp\asp\AspMVC\obj\Debug\netcoreapp2.1\AspMvc.pdb

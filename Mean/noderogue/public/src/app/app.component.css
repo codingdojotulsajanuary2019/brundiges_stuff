@@ -1,0 +1,11 @@
+.screen {
+    font-size: 24px;
+}
+
+*{
+    font-family: 'Fira Mono', 'Courier New', Courier, monospace;
+}
+
+pre {
+    margin: 4px;
+}

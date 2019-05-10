@@ -1,0 +1,21 @@
+
+<div style="text-align:center">
+  <h1>
+    Welcome to Node Rogue!
+  </h1>
+  <div *ngFor="let row of screen" class="screen">
+    <pre>{{row}}</pre>
+  </div>
+  <button (click)="move(0)">UP</button>
+  <button (click)="move(1)">DOWN</button>
+  <button (click)="move(3)">LEFT</button>
+  <button (click)="move(2)">RIGHT</button>
+  <button (click)="move(-1)">WAIT</button>
+  <p>Turn: {{turn}}</p>
+  <p>Health: {{player.hp}}</p>
+  <p>Gold: {{player.gold}}</p>
+  <button (click)="ngOnInit()">Reset</button>
+</div>
+
+
+
