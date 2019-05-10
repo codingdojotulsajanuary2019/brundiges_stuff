@@ -73,19 +73,32 @@ namespace AspMvc.Controllers
 		}
 
 		[HttpPost]
-		[Route("submit")]
-		public ViewResult SurveySubmit(Survey survey)
+		[Route("form")]
+		public IActionResult SurveySubmit(User user)
 		{
-			System.Console.WriteLine("Formbly submitted!");
-			System.Console.WriteLine(survey.Name);
-			System.Console.WriteLine(survey.Location);
-			System.Console.WriteLine(survey.Language);
-			System.Console.WriteLine(survey.Comment);
-			// ViewBag.Name = survey.Name;
-			// ViewBag.Location = survey.Location;
-			// ViewBag.Language = survey.Language;
-			// ViewBag.Comment = survey.Comment;
-			return View("Results", survey);
+			System.Console.WriteLine("Big chungus");
+			if (ModelState.IsValid)
+			{
+				System.Console.WriteLine("Formbly submitted!");
+				System.Console.WriteLine(user.FirstName);
+				System.Console.WriteLine(user.LastName);
+				System.Console.WriteLine(user.Email);
+				System.Console.WriteLine(user.Age);
+				System.Console.WriteLine(user.Password);
+				return RedirectToAction("Home");
+			}
+			else
+			{
+				System.Console.WriteLine("\nErrant input! Returning to registration");
+				return View("Survey");
+			}
+		}
+
+		[HttpGet]
+		[Route("home")]
+		public ViewResult Home()
+		{
+			return View("Success");
 		}
 
 	}

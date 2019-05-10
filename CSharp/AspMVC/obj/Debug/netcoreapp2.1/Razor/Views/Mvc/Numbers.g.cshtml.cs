@@ -13,7 +13,13 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
+#line 2 "C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\AspMVC\Views\_ViewImports.cshtml"
+using AspMvc.Models;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"98fe6523e5f42930451cd39e603d9da1375a820b", @"/Views/Mvc/Numbers.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a37fbb8de2fc9fd3da40070a7b4788cb157f17b0", @"/Views/_ViewImports.cshtml")]
     public class Views_Mvc_Numbers : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("rel", new global::Microsoft.AspNetCore.Html.HtmlString("stylesheet"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -46,7 +52,7 @@ namespace AspNetCore
             WriteLiteral("<!DOCTYPE html>\r\n<html lang=\"en\">\r\n\r\n");
             EndContext();
             BeginContext(37, 963, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a8949a5441544fd29983044ab7b9f246", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c4c97b8014bd4a188edec07778e74105", async() => {
                 BeginContext(43, 900, true);
                 WriteLiteral(@"
 	<meta charset=""UTF-8"">
@@ -67,7 +73,7 @@ namespace AspNetCore
 	");
                 EndContext();
                 BeginContext(943, 48, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "7ffb629ab0b848a8b792bfc2df12917b", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "bcba56417b7c46ce8ef5bf60d33cfbae", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -101,7 +107,7 @@ namespace AspNetCore
             WriteLiteral("\r\n\r\n");
             EndContext();
             BeginContext(1004, 312, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0d85852261b84313a4c74b0d5d6c1d5c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1323be9428664821a03987596921300c", async() => {
                 BeginContext(1010, 197, true);
                 WriteLiteral("\r\n\t<div class=\"container\">\r\n\t\t<div class=\"row top\">\r\n\t\t\t<div class=\"col\">\r\n\t\t\t\t<h3>Models</h3>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t\t<div class=\"row\">\r\n\t\t\t<div class=\"col\">\r\n\t\t\t\t<h3>Here are some numbers:</h3>\r\n");
                 EndContext();
