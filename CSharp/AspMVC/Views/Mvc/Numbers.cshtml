@@ -29,9 +29,11 @@
 		</div>
 		<div class="row">
 			<div class="col">
-				<p>Message for you sir: </p>
-				<p>@Model</p>
-
+				<h3>Here are some numbers:</h3>
+				@{foreach (int number in @Model)
+			{
+					<p>@number</p>
+			}}
 			</div>
 		</div>
 	</div>

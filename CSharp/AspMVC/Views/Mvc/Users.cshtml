@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="UTF-8">
 	<title>Models</title>
@@ -29,9 +28,11 @@
 		</div>
 		<div class="row">
 			<div class="col">
-				<p>Message for you sir: </p>
-				<p>@Model</p>
-
+				<h3>Here are some users:</h3>
+				@{foreach (var user in Model)
+				{
+					<p>@user.FirstName @user.LastName</p>
+				}}
 			</div>
 		</div>
 	</div>

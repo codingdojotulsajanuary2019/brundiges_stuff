@@ -11507,11 +11507,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Geoff\\Google Drive\\Important Stuff\\CD 2019 Stuff\\04 - C Sharp\\asp\\AspMvc\\AspMvc.csproj",
+      "projectUniqueName": "C:\\Users\\Geoff\\Documents\\GitHub\\brundiges_stuff\\CSharp\\AspMVC\\AspMvc.csproj",
       "projectName": "AspMvc",
-      "projectPath": "C:\\Users\\Geoff\\Google Drive\\Important Stuff\\CD 2019 Stuff\\04 - C Sharp\\asp\\AspMvc\\AspMvc.csproj",
+      "projectPath": "C:\\Users\\Geoff\\Documents\\GitHub\\brundiges_stuff\\CSharp\\AspMVC\\AspMvc.csproj",
       "packagesPath": "C:\\Users\\Geoff\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Geoff\\Google Drive\\Important Stuff\\CD 2019 Stuff\\04 - C Sharp\\asp\\AspMvc\\obj\\",
+      "outputPath": "C:\\Users\\Geoff\\Documents\\GitHub\\brundiges_stuff\\CSharp\\AspMVC\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

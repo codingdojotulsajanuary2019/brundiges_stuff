@@ -28,7 +28,7 @@ namespace AspMvc
         }
         public Startup(IHostingEnvironment env)
         {
-            System.Console.WriteLine("Big chungus");
+            // System.Console.WriteLine("Big chungus");
             // Console.WriteLine(env.ContentRootPath);
             // Console.WriteLine(env.IsDevelopment());
         }
