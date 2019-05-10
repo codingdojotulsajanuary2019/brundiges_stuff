@@ -43,3 +43,4 @@ C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\AspMVC\obj\Debug\netcorea
 C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\AspMVC\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
 C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\AspMVC\obj\Debug\netcoreapp2.1\Razor\Views\Mvc\Success.g.cshtml.cs
 C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\AspMVC\obj\Debug\netcoreapp2.1\Razor\Views\Mvc\Register.g.cshtml.cs
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\AspMVC\obj\Debug\netcoreapp2.1\Razor\Views\Mvc\Counter.g.cshtml.cs

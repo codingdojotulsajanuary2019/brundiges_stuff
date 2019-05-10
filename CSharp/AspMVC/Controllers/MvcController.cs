@@ -129,5 +129,38 @@ namespace AspMvc.Controllers
 				return View("survey");
 			}
 		}
+
+		[HttpGet]
+		[Route("counter")]
+		public ViewResult Counter()
+		{
+			int? c = HttpContext.Session.GetInt32("Counter");
+			if (c == null)
+			{
+				HttpContext.Session.SetInt32("Counter", 1);
+				ViewBag.Count = 1;
+			}
+			else
+			{
+				HttpContext.Session.SetInt32("Counter", (int)c + 1);
+				ViewBag.Count = (int)c + 1;
+			}
+
+			char[] chars = { 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+
+			string word = "";
+			for (int i = 0; i < 12; i++)
+			{
+				Random random = new Random();
+				int j = random.Next(chars.Length);
+				word += chars[j];
+			}
+			ViewBag.Word = word;
+
+			return View("Counter");
+		}
+
+
+
 	}
 }

@@ -13,6 +13,7 @@ namespace AspMvc
     {
         public void ConfigureServices(IServiceCollection services)
         {
+						services.AddSession();
             services.AddMvc();
         }
 
@@ -24,6 +25,7 @@ namespace AspMvc
             }
 
             app.UseStaticFiles();
+						app.UseSession();
             app.UseMvc();
         }
         public Startup(IHostingEnvironment env)
