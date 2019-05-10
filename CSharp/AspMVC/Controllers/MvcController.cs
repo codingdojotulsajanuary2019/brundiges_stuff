@@ -69,14 +69,14 @@ namespace AspMvc.Controllers
 		[Route("form")]
 		public ViewResult Form()
 		{
-			return View("Survey");
+			return View("Register");
 		}
 
 		[HttpPost]
 		[Route("form")]
-		public IActionResult SurveySubmit(User user)
+		public IActionResult RegistrationSubmit(User user)
 		{
-			System.Console.WriteLine("Big chungus");
+			// System.Console.WriteLine("Big chungus");
 			if (ModelState.IsValid)
 			{
 				System.Console.WriteLine("Formbly submitted!");
@@ -90,7 +90,7 @@ namespace AspMvc.Controllers
 			else
 			{
 				System.Console.WriteLine("\nErrant input! Returning to registration");
-				return View("Survey");
+				return View("Register");
 			}
 		}
 
@@ -101,5 +101,33 @@ namespace AspMvc.Controllers
 			return View("Success");
 		}
 
+		[HttpGet]
+		[Route("survey")]
+		public ViewResult Survey()
+		{
+			return View("Survey");
+		}
+
+		[HttpPost]
+		[Route("survey")]
+		public IActionResult SurveySubmit(Survey survey)
+		{
+			System.Console.WriteLine("Big chungus");
+			if (ModelState.IsValid)
+			{
+				System.Console.WriteLine("Formbly submitted!");
+				System.Console.WriteLine("Name: " + survey.Name);
+				System.Console.WriteLine("Language: " + survey.Language);
+				System.Console.WriteLine("Location: " + survey.Location);
+				System.Console.WriteLine("Comment: " + survey.Comment);
+				System.Console.WriteLine("Redirecting");
+				return View("Results", survey);
+			}
+			else
+			{
+				System.Console.WriteLine("\nErrant input! Returning to registration");
+				return View("survey");
+			}
+		}
 	}
 }
