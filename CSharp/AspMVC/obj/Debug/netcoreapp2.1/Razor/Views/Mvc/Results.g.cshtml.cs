@@ -52,7 +52,7 @@ using AspMvc.Models;
             WriteLiteral("<!DOCTYPE html>\r\n<html lang=\"en\">\r\n");
             EndContext();
             BeginContext(35, 1016, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "49d3254898f24a6fb8206ead5ec2b14b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c3515bfa12a54b2e9d49891db415b39b", async() => {
                 BeginContext(41, 954, true);
                 WriteLiteral(@"
 	<meta charset=""UTF-8"">
@@ -73,7 +73,7 @@ using AspMvc.Models;
 	");
                 EndContext();
                 BeginContext(995, 47, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "8f87c04314fe44de85b3b029245b7000", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "9a41835c2d0b4259b12fe2ced1dadb37", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -107,7 +107,7 @@ using AspMvc.Models;
             WriteLiteral("\r\n\r\n");
             EndContext();
             BeginContext(1055, 356, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f738e5b35b64414bb4633bb4480b1893", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3f468d5f554b48249771774cbfe5d00b", async() => {
                 BeginContext(1061, 147, true);
                 WriteLiteral("\r\n    <div class=\"container\">\r\n\t\t\t<div class=\"row top\">\r\n        <h3>Submitted Info</h3>\r\n\t\t\t</div>\r\n        <div class=\"row\">\r\n<div class=\"col\">\r\n");
                 EndContext();

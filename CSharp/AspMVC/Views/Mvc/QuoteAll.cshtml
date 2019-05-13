@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
-	<title>Models</title>
+	<title>Quote Dojo</title>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -22,20 +23,20 @@
 <body>
 	<div class="container">
 		<div class="row top">
-			<div class="col col-md">
-				<h3>Models</h3>
-			</div>
+			<h3>Quote Dojo</h3>
 		</div>
 		<div class="row">
-			<div class="col">
-				<h3>Here are some users:</h3>
-				@{foreach (var user in Model)
+			<div class="col col-lg-7">
+				<h3>Here are some quotes:</h3>
+				@{foreach (var quote in Model)
 				{
-					<p>@user.FirstName @user.LastName</p>
+					<p>@quote["Name"] | "@quote["Quote"]" on @quote["UpdatedAt"]</p>
 				}}
+				<a href="/quote">Submit quote</a>
 			</div>
 		</div>
 	</div>
+
 </body>
 
 </html>

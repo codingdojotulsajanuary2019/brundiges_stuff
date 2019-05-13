@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
-	<title>Models</title>
+	<title>Quote Dojo</title>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -22,20 +23,33 @@
 <body>
 	<div class="container">
 		<div class="row top">
-			<div class="col col-md">
-				<h3>Models</h3>
-			</div>
+			<h3>Quote Dojo</h3>
 		</div>
 		<div class="row">
-			<div class="col">
-				<h3>Here are some users:</h3>
-				@{foreach (var user in Model)
-				{
-					<p>@user.FirstName @user.LastName</p>
-				}}
+			<div class="col col-md-5">
+
+				@model Submission
+				<form asp-action="QuoteNew" asp-controller="Mvc" method="post">
+					<div class="form-group">
+						<span asp-validation-for="Name"></span>
+						<label asp-for="Name"></label>
+						<input type="text" class="form-control" asp-for="Name">
+					</div>
+					<div class="form-group">
+						<span asp-validation-for="Quote"></span>
+						<label asp-for="Quote"></label>
+						<input type="text" class="form-control" asp-for="Quote">
+					</div>
+					
+					<div class="form-group">
+						<input type="submit" class="btn btn-primary" value="Submit">
+					</div>
+				</form>
+				<a href="/quote/all">All quotes</a>
 			</div>
 		</div>
 	</div>
+
 </body>
 
 </html>

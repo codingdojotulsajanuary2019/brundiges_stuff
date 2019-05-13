@@ -173,23 +173,24 @@ namespace AspMvc.Controllers
 				HttpContext.Session.SetInt32("happiness", 20);
 				HttpContext.Session.SetInt32("supply", 3);
 				HttpContext.Session.SetInt32("energy", 50);
-				HttpContext.Session.SetString("message","Welcome to Virtual Frog");
+				HttpContext.Session.SetString("message", "Welcome to Virtual Frog");
 			}
 			Dictionary<string, int> stats = new Dictionary<string, int>();
 			stats.Add("food", (int)HttpContext.Session.GetInt32("food"));
 			stats.Add("happiness", (int)HttpContext.Session.GetInt32("happiness"));
 			stats.Add("supply", (int)HttpContext.Session.GetInt32("supply"));
 			stats.Add("energy", (int)HttpContext.Session.GetInt32("energy"));
-			
+
 
 			if (food <= 0 || (int)HttpContext.Session.GetInt32("happiness") <= 0)
 			{
-				HttpContext.Session.SetString("message","Froggie is ded!");
+				HttpContext.Session.SetString("message", "Froggie is ded!");
 				System.Console.WriteLine("Froggie is ded!");
 				ViewBag.Continue = false;
-			} else if (food >= 100 || (int)HttpContext.Session.GetInt32("happiness") >= 100)
+			}
+			else if (food >= 100 && (int)HttpContext.Session.GetInt32("happiness") >= 100)
 			{
-				HttpContext.Session.SetString("message","You win!");
+				HttpContext.Session.SetString("message", "You win!");
 				System.Console.WriteLine("You win!");
 				ViewBag.Continue = false;
 			}
@@ -231,9 +232,11 @@ namespace AspMvc.Controllers
 
 				HttpContext.Session.SetInt32("food", (int)food + j);
 				HttpContext.Session.SetInt32("supply", (int)supply - 1);
-				HttpContext.Session.SetString("message",$"You feed froggie. | Food + {j} Supply - 1");
-			} else {
-				HttpContext.Session.SetString("message","You have no food!");
+				HttpContext.Session.SetString("message", $"You feed froggie. | Food + {j} Supply - 1");
+			}
+			else
+			{
+				HttpContext.Session.SetString("message", "You have no food!");
 			}
 
 			return RedirectToAction("Frog");
@@ -266,12 +269,12 @@ namespace AspMvc.Controllers
 
 				HttpContext.Session.SetInt32("happiness", (int)happiness + j);
 				HttpContext.Session.SetInt32("energy", (int)energy - 5);
-				HttpContext.Session.SetString("message",$"You play with froggie. | Happiness + {j} Energy - 5");
+				HttpContext.Session.SetString("message", $"You play with froggie. | Happiness + {j} Energy - 5");
 				System.Console.WriteLine($"You play with froggie. It gains {j} happiness");
 			}
 			else
 			{
-				HttpContext.Session.SetString("message","You lack the energy to play with froggie!");
+				HttpContext.Session.SetString("message", "You lack the energy to play with froggie!");
 			}
 
 			return RedirectToAction("Frog");
@@ -301,11 +304,11 @@ namespace AspMvc.Controllers
 				HttpContext.Session.SetInt32("supply", (int)supply + j);
 				HttpContext.Session.SetInt32("energy", (int)energy - 5);
 				System.Console.WriteLine($"You work gaining {j} supply");
-				HttpContext.Session.SetString("message",$"You work gaining {j} supply");
+				HttpContext.Session.SetString("message", $"You work gaining {j} supply");
 			}
 			else
 			{
-				HttpContext.Session.SetString("message","You lack the energy to work!");
+				HttpContext.Session.SetString("message", "You lack the energy to work!");
 			}
 
 			return RedirectToAction("Frog");
@@ -335,7 +338,7 @@ namespace AspMvc.Controllers
 				HttpContext.Session.SetInt32("food", (int)food - 5);
 				HttpContext.Session.SetInt32("happiness", (int)happiness - 5);
 				HttpContext.Session.SetInt32("energy", (int)energy + 15);
-				HttpContext.Session.SetString("message",$"You sleep | Food - 5 Happiness - 5 Energy + 15");
+				HttpContext.Session.SetString("message", $"You sleep | Food - 5 Happiness - 5 Energy + 15");
 			}
 
 			return RedirectToAction("Frog");
@@ -351,5 +354,44 @@ namespace AspMvc.Controllers
 			return RedirectToAction("Frog");
 		}
 
+		[HttpGet]
+		[Route("quote")]
+		public ViewResult QuoteRenderForm()
+		{
+			System.Console.WriteLine("\nRendering quote submission page");
+			return View("QuoteSubmit");
+		}
+
+		[HttpGet]
+		[Route("quote/all")]
+		public ViewResult QuoteRenderAll()
+		{
+			System.Console.WriteLine("\nRendering all quotes!");
+			List<Dictionary<string, object>> AllQuotes = DbConnector.Query("SELECT * FROM users ORDER BY CreatedAt DESC");
+			return View("QuoteAll", AllQuotes);
+		}
+
+		[HttpPost]
+		[Route("quote/new")]
+		public IActionResult QuoteNew(Submission Submission)
+		{
+			System.Console.WriteLine("Name: " + Submission.Name);
+			System.Console.WriteLine("Quote: " + Submission.Quote);
+			System.Console.WriteLine("\nBig Chungus");
+			if (ModelState.IsValid)
+			{
+
+				string query = $"INSERT INTO users (Name, Quote, CreatedAt, UpdatedAt) VALUES ('{Submission.Name}', '{Submission.Quote}', Now(), Now())";
+				System.Console.WriteLine();
+				System.Console.WriteLine(query);
+				DbConnector.Execute(query);
+			}
+			else
+			{
+				System.Console.WriteLine("Invalid data!");
+				return RedirectToAction("QuoteRenderForm");
+			}
+			return RedirectToAction("QuoteRenderAll");
+		}
 	}
 }
