@@ -76,7 +76,6 @@ namespace AspMvc.Controllers
 		[Route("form")]
 		public IActionResult RegistrationSubmit(User user)
 		{
-			// System.Console.WriteLine("Big chungus");
 			if (ModelState.IsValid)
 			{
 				System.Console.WriteLine("Formbly submitted!");
