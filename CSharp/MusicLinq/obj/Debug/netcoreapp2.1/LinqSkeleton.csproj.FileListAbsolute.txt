@@ -1,0 +1,11 @@
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\MusicLinqSkeleton\bin\Debug\netcoreapp2.1\LinqSkeleton.deps.json
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\MusicLinqSkeleton\bin\Debug\netcoreapp2.1\LinqSkeleton.runtimeconfig.json
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\MusicLinqSkeleton\bin\Debug\netcoreapp2.1\LinqSkeleton.runtimeconfig.dev.json
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\MusicLinqSkeleton\bin\Debug\netcoreapp2.1\LinqSkeleton.dll
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\MusicLinqSkeleton\bin\Debug\netcoreapp2.1\LinqSkeleton.pdb
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\MusicLinqSkeleton\obj\Debug\netcoreapp2.1\LinqSkeleton.csprojAssemblyReference.cache
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\MusicLinqSkeleton\obj\Debug\netcoreapp2.1\LinqSkeleton.csproj.CoreCompileInputs.cache
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\MusicLinqSkeleton\obj\Debug\netcoreapp2.1\LinqSkeleton.AssemblyInfoInputs.cache
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\MusicLinqSkeleton\obj\Debug\netcoreapp2.1\LinqSkeleton.AssemblyInfo.cs
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\MusicLinqSkeleton\obj\Debug\netcoreapp2.1\LinqSkeleton.dll
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\MusicLinqSkeleton\obj\Debug\netcoreapp2.1\LinqSkeleton.pdb
