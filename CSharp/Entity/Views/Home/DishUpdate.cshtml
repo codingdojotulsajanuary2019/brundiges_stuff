@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Dapper Trails</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<!-- JS Styles -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col mb-3">
+				<h2>Entity Delicious!</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col ml-3">
+				<h3>Update Dish</h3>
+				@model Dish
+				<form asp-action="UpdateDish" asp-controller="Home" method="post">
+					<div class="form-group">
+						<span asp-validation-for="Name"></span>
+						<label asp-for="Name"></label>
+						<input type="text" class="form-control" asp-for="Name" value="@Model.Name">
+					</div>
+					<div class="form-group">
+						<span asp-validation-for="DishId"></span>
+						<label asp-for="DishId"></label>
+						<input type="hidden" class="form-control" asp-for="DishId" value="@Model.DishId">
+					</div>
+					<div class="form-group">
+						<span asp-validation-for="Chef"></span>
+						<label asp-for="Chef"></label>
+						<input type="text" class="form-control" asp-for="Chef" value="@Model.Chef">
+					</div>
+					<div class="form-group">
+						<label asp-for="Tastiness"></label>
+						<select asp-for='Tastiness' class="form-control">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<span asp-validation-for="Calories"></span>
+						<label asp-for="Calories"></label>
+						<input type="text" class="form-control" asp-for="Calories" value="@Model.Calories">
+					</div>
+					<div class="form-group">
+						<span asp-validation-for="Description"></span>
+						<label asp-for="Description"></label>
+						<input type="text" class="form-control" asp-for="Description" value="@Model.Description">
+					</div>
+					
+					<div class="form-group">
+						<input type="submit" class="btn btn-primary" value="Submit">
+					</div>
+				</form>
+				
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
