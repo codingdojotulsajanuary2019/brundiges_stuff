@@ -58,7 +58,7 @@ using Entity.Models;
             WriteLiteral("<!DOCTYPE html>\r\n<html lang=\"en\">\r\n\r\n");
             EndContext();
             BeginContext(37, 919, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "807c229965fc45e4a797bb71c3d99add", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4538d583a0814586a8d0f7f2f00b8088", async() => {
                 BeginContext(43, 906, true);
                 WriteLiteral(@"
 	<meta charset=""UTF-8"">
@@ -94,7 +94,7 @@ using Entity.Models;
             WriteLiteral("\r\n\r\n");
             EndContext();
             BeginContext(960, 582, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dbafdad34e2046dcb1772fd6c4ad49c7", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "67221a7579994e269911a04ee2d14f6c", async() => {
                 BeginContext(966, 185, true);
                 WriteLiteral("\r\n\t<div class=\"container\">\r\n\t\t<div class=\"row\">\r\n\t\t\t<div class=\"col mb-3\">\r\n\t\t\t\t<h2>Entity Delicious!</h2>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t\t<div class=\"row\">\r\n\t\t\t<div class=\"col ml-3\">\r\n\t\t\t\t<h3>");
                 EndContext();
@@ -149,7 +149,7 @@ using Entity.Models;
                 WriteLiteral("</p>\r\n\t\t\t\t<a href=\"/\">Home</a>\r\n\r\n\t\t\t\t");
                 EndContext();
                 BeginContext(1336, 123, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e7d56584f7ac4c89ac997012a4e98c77", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d704d83c0b5f4e1892c9205f99cd2f1b", async() => {
                     BeginContext(1380, 72, true);
                     WriteLiteral("\r\n\t\t\t\t\t<input type=\"submit\" class=\"btn btn-danger\" value=\"Delete\">\r\n\t\t\t\t");
                     EndContext();

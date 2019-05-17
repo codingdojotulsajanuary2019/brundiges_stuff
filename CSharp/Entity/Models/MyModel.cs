@@ -1,5 +1,6 @@
-using System.ComponentModel.DataAnnotations;
 using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Entity.Models
 {
@@ -10,11 +11,31 @@ namespace Entity.Models
 		[Key]
 		public int UserId { get; set; }
 		// MySQL VARCHAR and TEXT types can be represeted by a string
+
+		[Required]
+		[MinLength(2)]
+		[Display(Name = "First Name")]
 		public string FirstName { get; set; }
+
+		[Required]
+		[MinLength(2)]
+		[Display(Name = "Last Name")]
 		public string LastName { get; set; }
+
+		[Required]
+		[MinLength(2)]
+		[Display(Name = "Email")]
 		public string Email { get; set; }
+
+		[Required]
+		[MinLength(8)]
+		[DataType(DataType.Password)]
 		public string Password { get; set; }
-		// The MySQL DATETIME type can be represented by a DateTime
+
+		[NotMapped]
+		[Compare("Password")]
+		[DataType(DataType.Password)]
+		public string Confirm { get; set; }
 		public DateTime CreatedAt { get; set; }
 		public DateTime UpdatedAt { get; set; }
 	}

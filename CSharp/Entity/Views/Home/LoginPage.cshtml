@@ -17,26 +17,22 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
 		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 		crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\Entity\wwwroot\css\site.css" />
 </head>
 
 <body>
 	<div class="container">
-		<div class="row top">
-			<div class="col col-md">
-				<h3>Entity Delicious!</h3>
+		<div class="row">
+			<div class="col mb-3">
+				<h2>Login & Registration</h2>
 			</div>
 		</div>
 		<div class="row">
-			<div class="col">
-				<h3>All dishes</h3>
-				@{foreach (var dish in Model)
-				{
-				<p>@dish.Name by @dish.Chef</p>
-				}}
+			<div class="col ml-3">
+				<h3>Here he is!</h3>
+				<img src="https://images.unsplash.com/photo-1506506447188-78e2a1051d9e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=753&q=80" alt="A nice boi">
+				<a href="/login/logout">Logout</a>
 			</div>
 		</div>
-		<button class="btn btn-danger">Destroy self.</button>
 	</div>
 </body>
 

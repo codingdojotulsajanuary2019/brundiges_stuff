@@ -40,6 +40,7 @@ namespace Entity
 
 
 			app.UseStaticFiles();
+			app.UseSession();
 			app.UseMvc();
 		}
 	}

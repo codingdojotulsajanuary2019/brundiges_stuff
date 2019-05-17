@@ -1,14 +1,15 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Entity.Models;
-
-using Microsoft.EntityFrameworkCore;
-using Entity.Models;
 using System.Linq;
+
+using Entity.Models;
 
 namespace Entity.Controllers
 {
@@ -53,8 +54,8 @@ namespace Entity.Controllers
 		{
 			if (ModelState.IsValid)
 			{
-				newDish.CreatedAt =	DateTime.Now;
-				newDish.UpdatedAt =	DateTime.Now;
+				newDish.CreatedAt = DateTime.Now;
+				newDish.UpdatedAt = DateTime.Now;
 				dbContext.Add(newDish);
 				dbContext.SaveChanges();
 				return RedirectToAction("Index");
@@ -103,6 +104,116 @@ namespace Entity.Controllers
 			dbContext.SaveChanges();
 
 			return RedirectToAction("Index");
+		}
+
+		[Route("register")]
+		[HttpGet]
+		public IActionResult RenderRegister()
+		{
+			return View("LoginRegister");
+		}
+
+		[Route("register/add")]
+		[HttpPost]
+		public IActionResult AddUser(User newUser)
+		{
+			if (ModelState.IsValid)
+			{
+				if (dbContext.Users.Any(u => u.Email == newUser.Email))
+				{
+					System.Console.WriteLine("Email already in use!");
+					ModelState.AddModelError("Email", "Email already in use!");
+				}
+				else
+				{
+					System.Console.WriteLine("Adding user");
+					PasswordHasher<User> Hasher = new PasswordHasher<User>();
+					newUser.Password = Hasher.HashPassword(newUser, newUser.Password);
+					newUser.CreatedAt = DateTime.Now;
+					newUser.UpdatedAt = DateTime.Now;
+					dbContext.Add(newUser);
+					dbContext.SaveChanges();
+					HttpContext.Session.SetInt32("login", 1);
+					return RedirectToAction("RenderPage");
+				}
+			}
+
+			System.Console.WriteLine("Model invalid!");
+			return RedirectToAction("RenderRegister");
+		}
+
+		[Route("login")]
+		[HttpGet]
+		public IActionResult RenderLogin()
+		{
+			return View("LoginLogin");
+		}
+
+		[Route("login/login")]
+		[HttpPost]
+		public IActionResult Login(User userSubmission)
+		{
+			System.Console.WriteLine("Logging in user");
+			if (userSubmission.Email != null)
+			{
+				System.Console.WriteLine("Model valid");
+				var userInDb = dbContext.Users.FirstOrDefault(u => u.Email == userSubmission.Email);
+				if (userInDb != null)
+				{
+					System.Console.WriteLine("Email exists");
+					// Initialize hasher object
+					var hasher = new PasswordHasher<User>();
+
+					// varify provided password against hash stored in db
+					var result = hasher.VerifyHashedPassword(userSubmission, userInDb.Password, userSubmission.Password);
+
+					// result can be compared to 0 for failure
+					if (result != 0)
+					{
+						HttpContext.Session.SetInt32("login", 1);
+						return RedirectToAction("RenderPage");
+					}
+					else
+					{
+						System.Console.WriteLine("Invalid password!");
+					}
+				}
+				else
+				{
+					System.Console.WriteLine("Email does not exist!");
+				}
+				ModelState.AddModelError("Email", "Invalid Email/Password");
+				return View("SomeView");
+
+			}
+
+			System.Console.WriteLine("Login failed!");
+			return RedirectToAction("RenderLogin");
+		}
+
+		[Route("login/page")]
+		[HttpGet]
+		public IActionResult RenderPage()
+		{
+			int? login = HttpContext.Session.GetInt32("login");
+			if (login != null)
+			{
+				if (login == 1)
+				{
+					return View("LoginPage");
+				}
+			}
+
+			ModelState.AddModelError("Email", "You must login!");
+			return View("LoginLogin");
+		}
+
+		[Route("login/logout")]
+		[HttpGet]
+		public IActionResult Logout()
+		{
+			HttpContext.Session.Clear();
+			return RedirectToAction("RenderLogin");
 		}
 
 	}
