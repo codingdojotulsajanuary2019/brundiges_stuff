@@ -17,6 +17,21 @@ namespace Entity.Controllers
 	{
 		private MyContext dbContext;
 
+		public IEnumerable<Dish> JoinDishes(IEnumerable<Dish> AllDishes, IEnumerable<Chef> AllChefs)
+		{
+
+			IEnumerable<Dish> Alliterations = AllDishes.Join(AllChefs,
+		Dish => Dish.ChefId,
+		Chef => Chef.ChefId,
+		(dish, chef) =>
+		{
+			dish.Chef = chef;
+			return dish;
+		});
+
+			return Alliterations;
+		}
+
 		public HomeController(MyContext context)
 		{
 			dbContext = context;
@@ -27,7 +42,11 @@ namespace Entity.Controllers
 		public IActionResult Index()
 		{
 			IEnumerable<Dish> sortDishes = dbContext.Dishes.OrderByDescending(d => d.UpdatedAt);
+			IEnumerable<Chef> sortChefs = dbContext.Chefs.OrderBy(d => d.ChefId);
+			sortDishes = JoinDishes(sortDishes, sortChefs);
+
 			List<Dish> AllDishes = sortDishes.ToList();
+
 			return View("Index", AllDishes);
 		}
 
@@ -35,16 +54,29 @@ namespace Entity.Controllers
 		[HttpGet]
 		public IActionResult ShowDish(int i)
 		{
-			Dish Dish = dbContext.Dishes.FirstOrDefault(a => a.DishId == i);
-			return View("Dish", Dish);
+			IEnumerable<Dish> sortDishes = dbContext.Dishes.Where(d => d.DishId == i);
+			IEnumerable<Chef> sortChefs = dbContext.Chefs.OrderBy(d => d.ChefId);
+			sortDishes = JoinDishes(sortDishes, sortChefs);
+
+			if (sortDishes.Count() > 0)
+			{
+				Dish Dish = sortDishes.ElementAt(0);
+				return View("Dish", Dish);
+			}
+			else
+			{
+				return RedirectToAction("Index");
+			}
+
+
 		}
 
 		[Route("new")]
 		[HttpGet]
 		public IActionResult renderNewDish()
 		{
-			System.Console.WriteLine("\nBig chungus.\n");
 			System.Console.WriteLine("\nRendering new dish page\n");
+
 			return View("DishNew");
 		}
 
@@ -56,6 +88,11 @@ namespace Entity.Controllers
 			{
 				newDish.CreatedAt = DateTime.Now;
 				newDish.UpdatedAt = DateTime.Now;
+				
+				Chef niceChef = dbContext.Chefs.FirstOrDefault(a => a.ChefId == newDish.ChefId);
+				newDish.Chef = niceChef;
+				niceChef.NoDishes = niceChef.NoDishes + 1;
+
 				dbContext.Add(newDish);
 				dbContext.SaveChanges();
 				return RedirectToAction("Index");
@@ -105,6 +142,67 @@ namespace Entity.Controllers
 
 			return RedirectToAction("Index");
 		}
+
+		[Route("chef")]
+		[HttpGet]
+		public IActionResult RenderAllChefs()
+		{
+			System.Console.WriteLine("Rendering all chefs");
+			IEnumerable<Chef> sortChefs = dbContext.Chefs.OrderByDescending(c => c.UpdatedAt);
+			List<Chef> AllChefs = sortChefs.ToList();
+			foreach (Chef chef in AllChefs)
+			{
+				DateTime zeroTime = new DateTime(1, 1, 1);
+				DateTime a = chef.DoB;
+				DateTime b = DateTime.Now;
+
+				TimeSpan span = b - a;
+				int years = (zeroTime + span).Year - 1;
+
+				Console.WriteLine("Age: " + years);
+				chef.Age = years;
+			}
+			return View("AllChefs", AllChefs);
+		}
+
+		[Route("chef/new")]
+		[HttpGet]
+		public IActionResult RenderNewChef()
+		{
+			return View("ChefNew");
+		}
+
+		[Route("chef/add")]
+		[HttpPost]
+		public IActionResult AddChef(Chef newChef)
+		{
+			if (ModelState.IsValid)
+			{
+				DateTime inputDate = DateTime.Parse(newChef.strDate);
+				if (inputDate > DateTime.Now)
+				{
+					System.Console.WriteLine("Input date cannot be in the future!");
+					ModelState.AddModelError("strDate", "Date of birth cannot be in the future!");
+					View("ChefNew");
+				}
+				else
+				{
+					newChef.DoB = inputDate;
+					newChef.CreatedAt = DateTime.Now;
+					newChef.UpdatedAt = DateTime.Now;
+
+					dbContext.Add(newChef);
+					dbContext.SaveChanges();
+					return RedirectToAction("RenderAllChefs");
+				}
+			}
+
+			System.Console.WriteLine("Model invalid!");
+			return View("ChefNew");
+		}
+
+		// I'm so tired
+
 
 		[Route("register")]
 		[HttpGet]

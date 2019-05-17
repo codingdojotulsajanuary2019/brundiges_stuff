@@ -31,9 +31,10 @@
 				<h3>All dishes</h3>
 				@{foreach (var dish in Model)
 				{
-				<p><a href="/@dish.DishId">@dish.Name</a> by @dish.Chef</p>
+				<p><a href="/@dish.DishId">@dish.Name</a> by @dish.Chef.Name</p>
 				}}
 			<a href="new">New dish</a>
+			<a href="chef">Chefs</a>
 			</div>
 		</div>
 	</div>

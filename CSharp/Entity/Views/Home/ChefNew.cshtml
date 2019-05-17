@@ -28,17 +28,25 @@
 		</div>
 		<div class="row">
 			<div class="col ml-3">
-				<h3>@Model.Name</h3>
-				<h5>@Model.Chef.Name</h5>
-				<p>@Model.Description</p>
-				<p>Tastiness: @Model.Tastiness</p>
-				<p>Calories: @Model.Calories</p>
-				<a href="/">Home</a>
-
-				<form asp-action="UpdateDish" method="post">
-					<input type="submit" class="btn btn-danger" value="Delete">
+				<h3>Submit new Chef</h3>
+				@model Chef
+				<form asp-action="AddChef" asp-controller="Home" method="post">
+					<div class="form-group">
+						<span asp-validation-for="Name"></span>
+						<label asp-for="Name"></label>
+						<input type="text" class="form-control" asp-for="Name">
+					</div>
+					<div class="form-group">
+						<span asp-validation-for="strDate"></span>
+						<label asp-for="strDate"></label>
+						<input type="date" class="form-control" asp-for="strDate">
+					</div>
+					
+					<div class="form-group">
+						<input type="submit" class="btn btn-primary" value="Submit">
+					</div>
 				</form>
-					<a href="@Model.DishId/edit">Edit</a>
+				
 			</div>
 		</div>
 	</div>

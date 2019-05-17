@@ -14,10 +14,9 @@ namespace Entity.Models
 		[Display(Name = "Name")]
 		public string Name { get; set; }
 
-		[Required]
-		[MinLength(2)]
-		[Display(Name = "Chef")]
-		public string Chef { get; set; }
+		public Chef Chef { get; set; }
+
+		public int ChefId { get; set; }
 
 		[Required]
 		[Range(1, 5)]

@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Dapper Trails</title>
+	<title>Chefs</title>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -37,9 +37,12 @@
 						<input type="text" class="form-control" asp-for="Name">
 					</div>
 					<div class="form-group">
-						<span asp-validation-for="Chef"></span>
-						<label asp-for="Chef"></label>
-						<input type="text" class="form-control" asp-for="Chef">
+						<label asp-for="ChefId"></label>
+						<select asp-for='ChefId' class="form-control">
+							<option value="1">Big Chungus</option>
+							<option value="2">Thicc Bih</option>
+							<option value="5">Hrea</option>
+						</select>
 					</div>
 					<div class="form-group">
 						<label asp-for="Tastiness"></label>
