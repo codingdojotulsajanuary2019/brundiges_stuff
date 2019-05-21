@@ -9,5 +9,8 @@ namespace Entity.Models
 		public DbSet<Dish> Dishes { get; set; }
 		public DbSet<Chef> Chefs { get; set; }
 		public DbSet<Xaction> Xactions { get; set; }
+		public DbSet<Category> Categories { get; set; }
+		public DbSet<Product> Products { get; set; }
+		public DbSet<Connection> Connections { get; set; }
 	}
 }

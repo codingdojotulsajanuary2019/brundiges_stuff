@@ -23,17 +23,32 @@
 	<div class="container">
 		<div class="row">
 			<div class="col mb-3">
-				<h2>Entity Delicious 2!</h2>
+				<h2>Products and Categories</h2>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col ml-3">
-				<h3>All chefs</h3>
-				@{foreach (Chef chef in Model)
+				<h3>All categories</h3>
+				@{foreach (Category category in Model.categories)
 				{
-				<p>@chef.Name | Age: @chef.Age | No. of Dishes: @chef.NoDishes</p>
+				<p><a href="/product/@category.CategoryId">@category.Name</a></p>
 				}}
-				<p><a href="chef/new">New chef</a> | <a href="/">Dishes</a></p>
+				<p><a href="/product">Products</a></p>
+			</div>
+			<div class="col ml-3">
+				<h3>Create new category</h3>
+
+				@model NewProductView
+				<form asp-action="AddCategory" asp-controller="Home" method="post">
+					<div class="form-group">
+						<span asp-validation-for="category.Name"></span>
+						<label asp-for="category.Name"></label>
+						<input type="text" class="form-control" asp-for="category.Name">
+					</div>
+					<div class="form-group">
+						<input type="submit" class="btn btn-primary" value="Submit">
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>

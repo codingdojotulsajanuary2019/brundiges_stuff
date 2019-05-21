@@ -365,5 +365,135 @@ namespace Entity.Controllers
 			return RedirectToAction("RenderLogin");
 		}
 
+		[Route("product")]
+		[HttpGet]
+		public IActionResult RenderProducts()
+		{
+			System.Console.WriteLine("Rendering all products");
+			IEnumerable<Product> sortCategories = dbContext.Products.OrderBy(c => c.Name);
+			List<Product> AllProducts = sortCategories.ToList();
+			NewProductView nice = new NewProductView();
+			nice.products = AllProducts;
+
+			return View("AllProducts", nice);
+		}
+
+		[Route("product/add")]
+		[HttpPost]
+		public IActionResult AddProduct(NewProductView newProductView)
+		{
+			if (ModelState.IsValid)
+			{
+				Product newCategory = newProductView.product;
+				newCategory.CreatedAt = DateTime.Now;
+				newCategory.UpdatedAt = DateTime.Now;
+
+				dbContext.Add(newCategory);
+				dbContext.SaveChanges();
+				return RedirectToAction("RenderProducts");
+			}
+			else
+			{
+				System.Console.WriteLine("Model invalid!");
+				return RedirectToAction("RenderProducts");
+			}
+		}
+
+		[Route("category")]
+		[HttpGet]
+		public IActionResult RenderCategories()
+		{
+			System.Console.WriteLine("Rendering all categories");
+			IEnumerable<Category> sortCategories = dbContext.Categories.OrderBy(c => c.Name);
+			List<Category> AllCategories = sortCategories.ToList();
+			NewProductView nice = new NewProductView();
+			nice.categories = AllCategories;
+
+			return View("AllCategories", nice);
+		}
+
+		[Route("category/add")]
+		[HttpPost]
+		public IActionResult AddCategory(NewProductView newProductView)
+		{
+			if (ModelState.IsValid)
+			{
+				Category newCategory = newProductView.category;
+				newCategory.CreatedAt = DateTime.Now;
+				newCategory.UpdatedAt = DateTime.Now;
+
+				dbContext.Add(newCategory);
+				dbContext.SaveChanges();
+				return RedirectToAction("RenderCategories");
+			}
+			else
+			{
+				System.Console.WriteLine("Model invalid!");
+				return RedirectToAction("RenderCategories");
+			}
+		}
+
+		[Route("product/{i}")]
+		[HttpGet]
+		public IActionResult ShowProduct(int i)
+		{
+			System.Console.WriteLine("Rendering product with id: " + i);
+			NewProductView view = new NewProductView();
+
+			IEnumerable<Category> categories = dbContext.Categories.OrderBy(c => c.Name);
+			view.categories = categories.ToList();
+
+			List<Connection> hasConnections = dbContext.Connections.Where(c => c.ProductId == i).ToList();
+			System.Console.WriteLine("Count: " + hasConnections.Count);
+			if (hasConnections.Count > 0)
+			{
+				view.product = dbContext.Products.Include(p => p.Connections).ThenInclude(c => c.Category).FirstOrDefault(product => product.ProductId == i);
+			}
+			else
+			{
+				Product oneProduct = dbContext.Products.FirstOrDefault(c => c.ProductId == i);
+				view.product = oneProduct;
+			}
+
+			return View("ShowProduct", view);
+		}
+
+		[Route("category/{i}")]
+		[HttpGet]
+		public IActionResult ShowCategory(int i)
+		{
+			System.Console.WriteLine("Rendering category with id: " + i);
+
+			Category oneCate = dbContext.Categories.FirstOrDefault(c => c.CategoryId == i);
+			NewProductView nice = new NewProductView();
+			nice.category = oneCate;
+
+			IEnumerable<Product> products = dbContext.Products.OrderBy(c => c.Name);
+			nice.products = products.ToList();
+
+			return View("ShowCategory", nice);
+		}
+
+		[Route("product/connect")]
+		[HttpPost]
+		public IActionResult AddConnection(NewProductView newProductView)
+		{
+			if (ModelState.IsValid)
+			{
+				Connection newConnection = newProductView.connection;
+				System.Console.WriteLine(newConnection);
+				newConnection.CreatedAt = DateTime.Now;
+
+				dbContext.Add(newConnection);
+				dbContext.SaveChanges();
+				return RedirectToAction("RenderProducts");
+			}
+			else
+			{
+				System.Console.WriteLine("Model invalid!");
+				return RedirectToAction("RenderProducts");
+			}
+		}
+
 	}
 }

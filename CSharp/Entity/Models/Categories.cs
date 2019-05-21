@@ -5,12 +5,12 @@ using System.Collections.Generic;
 
 namespace Entity.Models
 {
-	public class Product
+	public class Category
 	{
 		// auto-implemented properties need to match the columns in your table
 		// the [Key] attribute is used to mark the Model property being used for your table's Primary Key
 		[Key]
-		public int ProductId { get; set; }
+		public int CategoryId { get; set; }
 		// MySQL VARCHAR and TEXT types can be represeted by a string
 
 		[Required]
@@ -18,24 +18,15 @@ namespace Entity.Models
 		[Display(Name = "Name")]
 		public string Name { get; set; }
 
-		[Required]
-		[Range(0, 1000000)]
-		public int Price { get; set; }
-
-		[Required]
-		[MinLength(2)]
-		[Display(Name = "Description")]
-		public string Description { get; set; }
-
 		[NotMapped]
 		public List<Connection> Connections { get; set; }
 
-		public DateTime CreatedAt { get; set; }
-		public DateTime UpdatedAt { get; set; }
-
-		public Product(){
+		public Category()
+		{
 			Connections = new List<Connection>();
 		}
 
+		public DateTime CreatedAt { get; set; }
+		public DateTime UpdatedAt { get; set; }
 	}
 }

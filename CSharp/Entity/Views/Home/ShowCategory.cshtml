@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Entity</title>
+	<title>Chefs</title>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -23,17 +23,31 @@
 	<div class="container">
 		<div class="row">
 			<div class="col mb-3">
-				<h2>Entity Delicious 2!</h2>
+				<h2>Products and Categories</h2>
 			</div>
 		</div>
 		<div class="row">
-			<div class="col ml-3">
-				<h3>All chefs</h3>
-				@{foreach (Chef chef in Model)
-				{
-				<p>@chef.Name | Age: @chef.Age | No. of Dishes: @chef.NoDishes</p>
-				}}
-				<p><a href="chef/new">New chef</a> | <a href="/">Dishes</a></p>
+			<div class="col col-md-5">
+				<h3>Category: @Model.category.Name</h3>
+				<p><a href="/product">All categories</a></p>
+			</div>
+			<div class="col col-md-5">
+				<h3>Add new product</h3>
+				@model NewProductView
+				<form asp-action="AddConnection" asp-controller="Home" method="post">
+					<div class="form-group">
+						<input type="hidden" asp-for='connection.CategoryId' value = "@Model.category.CategoryId">
+						<select asp-for='connection.ProductId' class="form-control">
+							@{foreach (Product product in Model.products)
+							{
+								<option value=@product.ProductId>@product.Name</option>
+							}}
+						</select>
+					</div>
+					<div class="form-group">
+						<input type="submit" class="btn btn-primary" value="Submit">
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>

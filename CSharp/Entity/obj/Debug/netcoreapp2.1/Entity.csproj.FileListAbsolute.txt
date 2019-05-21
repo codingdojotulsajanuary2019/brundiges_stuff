@@ -32,3 +32,7 @@ C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\Entity\obj\Debug\netcorea
 C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\Entity\obj\Debug\netcoreapp2.1\Razor\Views\Home\LoginRegister.g.cshtml.cs
 C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\Entity\obj\Debug\netcoreapp2.1\Razor\Views\Home\ChefNew.g.cshtml.cs
 C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\Entity\obj\Debug\netcoreapp2.1\Razor\Views\Home\AllChefs.g.cshtml.cs
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\Entity\obj\Debug\netcoreapp2.1\Razor\Views\Home\AllProducts.g.cshtml.cs
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\Entity\obj\Debug\netcoreapp2.1\Razor\Views\Home\AllCategories.g.cshtml.cs
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\Entity\obj\Debug\netcoreapp2.1\Razor\Views\Home\ShowProduct.g.cshtml.cs
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\Entity\obj\Debug\netcoreapp2.1\Razor\Views\Home\ShowCategory.g.cshtml.cs

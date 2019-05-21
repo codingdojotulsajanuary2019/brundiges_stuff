@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Entity.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20190517153144_AddChefs")]
-    partial class AddChefs
+    [Migration("20190521212517_newproducts")]
+    partial class newproducts
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -18,6 +18,23 @@ namespace Entity.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.1.4-rtm-31024")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
+
+            modelBuilder.Entity("Entity.Models.Category", b =>
+                {
+                    b.Property<int>("CategoryId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("CreatedAt");
+
+                    b.Property<string>("Name")
+                        .IsRequired();
+
+                    b.Property<DateTime>("UpdatedAt");
+
+                    b.HasKey("CategoryId");
+
+                    b.ToTable("Categories");
+                });
 
             modelBuilder.Entity("Entity.Models.Chef", b =>
                 {
@@ -31,11 +48,33 @@ namespace Entity.Migrations
                     b.Property<string>("Name")
                         .IsRequired();
 
+                    b.Property<int>("NoDishes");
+
                     b.Property<DateTime>("UpdatedAt");
 
                     b.HasKey("ChefId");
 
-                    b.ToTable("Chef");
+                    b.ToTable("Chefs");
+                });
+
+            modelBuilder.Entity("Entity.Models.Connection", b =>
+                {
+                    b.Property<int>("ConnectionId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("CategoryId");
+
+                    b.Property<DateTime>("CreatedAt");
+
+                    b.Property<int>("ProductId");
+
+                    b.HasKey("ConnectionId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("Connections");
                 });
 
             modelBuilder.Entity("Entity.Models.Dish", b =>
@@ -67,6 +106,28 @@ namespace Entity.Migrations
                     b.ToTable("Dishes");
                 });
 
+            modelBuilder.Entity("Entity.Models.Product", b =>
+                {
+                    b.Property<int>("ProductId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("CreatedAt");
+
+                    b.Property<string>("Description")
+                        .IsRequired();
+
+                    b.Property<string>("Name")
+                        .IsRequired();
+
+                    b.Property<int>("Price");
+
+                    b.Property<DateTime>("UpdatedAt");
+
+                    b.HasKey("ProductId");
+
+                    b.ToTable("Products");
+                });
+
             modelBuilder.Entity("Entity.Models.User", b =>
                 {
                     b.Property<int>("UserId")
@@ -91,6 +152,35 @@ namespace Entity.Migrations
                     b.HasKey("UserId");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("Entity.Models.Xaction", b =>
+                {
+                    b.Property<int>("XactionId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("Amount");
+
+                    b.Property<DateTime>("CreatedAt");
+
+                    b.Property<int>("UserId");
+
+                    b.HasKey("XactionId");
+
+                    b.ToTable("Xactions");
+                });
+
+            modelBuilder.Entity("Entity.Models.Connection", b =>
+                {
+                    b.HasOne("Entity.Models.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Entity.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Entity.Models.Dish", b =>
