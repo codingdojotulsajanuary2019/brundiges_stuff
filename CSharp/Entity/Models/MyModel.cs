@@ -1,6 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Collections.Generic;
 
 namespace Entity.Models
 {
@@ -36,6 +37,12 @@ namespace Entity.Models
 		[Compare("Password")]
 		[DataType(DataType.Password)]
 		public string Confirm { get; set; }
+
+		[NotMapped]
+		public int Balance { get; set; }
+
+		[NotMapped]
+		public List<Xaction> Xactions { get; set; }
 		public DateTime CreatedAt { get; set; }
 		public DateTime UpdatedAt { get; set; }
 	}

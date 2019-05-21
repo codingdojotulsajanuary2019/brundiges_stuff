@@ -35,10 +35,8 @@
 				<p>Calories: @Model.Calories</p>
 				<a href="/">Home</a>
 
-				<form asp-action="UpdateDish" method="post">
-					<input type="submit" class="btn btn-danger" value="Delete">
-				</form>
-					<a href="@Model.DishId/edit">Edit</a>
+				<a href="@Model.DishId/delete">Delete</a>
+				<a href="@Model.DishId/edit">Edit</a>
 			</div>
 		</div>
 	</div>

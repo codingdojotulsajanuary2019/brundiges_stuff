@@ -76,19 +76,24 @@ namespace Entity.Controllers
 		public IActionResult renderNewDish()
 		{
 			System.Console.WriteLine("\nRendering new dish page\n");
+			NewDishView nice = new NewDishView();
+			IEnumerable<Chef> sortChefs = dbContext.Chefs.OrderByDescending(c => c.UpdatedAt);
+			List<Chef> AllChefs = sortChefs.ToList();
+			nice.chefs = AllChefs;
 
-			return View("DishNew");
+			return View("DishNew", nice);
 		}
 
 		[Route("new/add")]
 		[HttpPost]
-		public IActionResult AddDish(Dish newDish)
+		public IActionResult AddDish(NewDishView newDishView)
 		{
 			if (ModelState.IsValid)
 			{
+				Dish newDish = newDishView.dish;
 				newDish.CreatedAt = DateTime.Now;
 				newDish.UpdatedAt = DateTime.Now;
-				
+
 				Chef niceChef = dbContext.Chefs.FirstOrDefault(a => a.ChefId == newDish.ChefId);
 				newDish.Chef = niceChef;
 				niceChef.NoDishes = niceChef.NoDishes + 1;
@@ -105,12 +110,17 @@ namespace Entity.Controllers
 		}
 
 		[Route("{id}/delete")]
-		[HttpPost]
+		[HttpGet]
 		public IActionResult DeleteDish(int id)
 		{
+			System.Console.WriteLine("Deleting dish with ID " + id);
 			Dish RetrievedUser = dbContext.Dishes.SingleOrDefault(dish => dish.DishId == id);
 
 			dbContext.Dishes.Remove(RetrievedUser);
+
+			Chef niceChef = dbContext.Chefs.FirstOrDefault(a => a.ChefId == id);
+			niceChef.NoDishes = niceChef.NoDishes - 1;
+
 			dbContext.SaveChanges();
 
 			return RedirectToAction("Index");
@@ -159,7 +169,7 @@ namespace Entity.Controllers
 				TimeSpan span = b - a;
 				int years = (zeroTime + span).Year - 1;
 
-				Console.WriteLine("Age: " + years);
+				// Console.WriteLine("Age: " + years);
 				chef.Age = years;
 			}
 			return View("AllChefs", AllChefs);
@@ -203,7 +213,6 @@ namespace Entity.Controllers
 
 		// I'm so tired
 
-
 		[Route("register")]
 		[HttpGet]
 		public IActionResult RenderRegister()
@@ -231,6 +240,8 @@ namespace Entity.Controllers
 					newUser.UpdatedAt = DateTime.Now;
 					dbContext.Add(newUser);
 					dbContext.SaveChanges();
+
+					HttpContext.Session.SetInt32("user", newUser.UserId);
 					HttpContext.Session.SetInt32("login", 1);
 					return RedirectToAction("RenderPage");
 				}
@@ -269,6 +280,7 @@ namespace Entity.Controllers
 					if (result != 0)
 					{
 						HttpContext.Session.SetInt32("login", 1);
+						HttpContext.Session.SetInt32("user", userInDb.UserId);
 						return RedirectToAction("RenderPage");
 					}
 					else
@@ -298,12 +310,51 @@ namespace Entity.Controllers
 			{
 				if (login == 1)
 				{
-					return View("LoginPage");
+					int userId = (int)HttpContext.Session.GetInt32("user");
+					User niceUser = dbContext.Users.FirstOrDefault(a => a.UserId == userId);
+					IEnumerable<Xaction> userXactions = dbContext.Xactions.Where(x => x.UserId == userId);
+					userXactions = userXactions.OrderByDescending(x => x.CreatedAt);
+					List<Xaction> nice = userXactions.ToList();
+
+					int balance = 0;
+					foreach (Xaction xaction in nice)
+					{
+						balance += xaction.Amount;
+					}
+					niceUser.Balance = balance;
+					niceUser.Xactions = nice;
+
+					return View("LoginPage", niceUser);
 				}
 			}
 
 			ModelState.AddModelError("Email", "You must login!");
 			return View("LoginLogin");
+		}
+
+		[Route("login/page/newxaction")]
+		[HttpPost]
+		public IActionResult NewXaction(Xaction newXaction)
+		{
+			System.Console.WriteLine("New Xaction", newXaction);
+			int? login = HttpContext.Session.GetInt32("user");
+			if (login != null)
+			{
+				int userId = (int)login;
+				newXaction.CreatedAt = DateTime.Now;
+				newXaction.UserId = userId;
+				dbContext.Add(newXaction);
+				dbContext.SaveChanges();
+				System.Console.WriteLine("New Xaction with amount " + newXaction.Amount);
+
+				return RedirectToAction("RenderPage");
+			}
+			else
+			{
+				System.Console.WriteLine("You must be logged in!");
+			}
+
+			return RedirectToAction("RenderLogin");
 		}
 
 		[Route("login/logout")]

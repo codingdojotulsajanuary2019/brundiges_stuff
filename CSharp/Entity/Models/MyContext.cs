@@ -8,5 +8,6 @@ namespace Entity.Models
 		public DbSet<User> Users { get; set; }
 		public DbSet<Dish> Dishes { get; set; }
 		public DbSet<Chef> Chefs { get; set; }
+		public DbSet<Xaction> Xactions { get; set; }
 	}
 }
