@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Chefs</title>
+	<title>Wedding Planner</title>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -23,37 +23,34 @@
 	<div class="container">
 		<div class="row">
 			<div class="col mb-3">
-				<h2>Products and Categories</h2>
+				<h2>Wedding Planner</h2>
 			</div>
 		</div>
 		<div class="row">
-			<div class="col col-md-5">
-				<h3>Product: @Model.product.Name</h3>
-				@foreach(var connection in Model.product.Connections)
-				{
-					<p>@connection.Category.Name</p>
-				}
-				<p><a href="/product">All products</a></p>
+			<div class="col ml-3">
+				<h3>All Weddings</h3>
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">Wedding</th>
+							<th scope="col">Date</th>
+							<th scope="col">Guests</th>
+							<th scope="col">Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						@{foreach (Wedding wedding in Model.AllWeddings)
+						{
+							<tr>
+								<th scope="row"><a href="/weddings/@wedding.WeddingId">@wedding.WedderOne and @wedding.WedderTwo</a></th>
+								<td>@wedding.Date</td>
+								<td>0</td>
+								<td>RSVP</td>
+							</tr>
+						}}
+					</tbody>
+				</table>
 			</div>
-			<div class="col col-md-5">
-				<h3>Create new category</h3>
-				@model NewProductView
-				<form asp-action="AddConnection" asp-controller="Home" method="post">
-					<div class="form-group">
-						<input type="hidden" asp-for='connection.ProductId' value = "@Model.product.ProductId">
-						<select asp-for='connection.CategoryId' class="form-control">
-							@{foreach (Category category in Model.categories)
-							{
-								<option value=@category.CategoryId>@category.Name</option>
-							}}
-						</select>
-					</div>
-					<div class="form-group">
-						<input type="submit" class="btn btn-primary" value="Submit">
-					</div>
-				</form>
-			</div>
-		</div>
 	</div>
 </body>
 
