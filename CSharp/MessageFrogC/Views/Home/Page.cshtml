@@ -1,0 +1,37 @@
+﻿@model MyMessageView;
+<p>Welcome @Model.LoggedUser.Name</p>
+<h3>New Message</h3>
+<form asp-action="newMessage" asp-controller="Home" method="post">
+			<div class="form-group">
+				<span asp-validation-for="newMessage.Content"></span>
+				<label asp-for="newMessage.Content"></label>
+				<input type="text" class="form-control" asp-for="newMessage.Content">
+			</div>
+			<div class="form-group">
+				<input type="submit" class="btn btn-primary" value="Submit">
+			</div>
+		</form>
+
+<h3>All Messages</h3>
+@{foreach(Message message in Model.Messages)
+	{
+		<p><b>@message.User.Name says:</b> "@message.Content" at @message.CreatedAt</p>
+		foreach(Comment comment in message.Comments){
+			<p class="ml-4">@comment.User.Name commented "@comment.Content" at @comment.CreatedAt</p>
+		}
+		<form asp-action="NewComment" asp-controller="Home" method="post">
+		<div class="row mb-4">
+			<div class="form-group col col-sm">
+				<span asp-validation-for="newComment.Content"></span>
+				<input type="text" class="form-control" asp-for="newComment.Content">
+				<input type="hidden" asp-for="newComment.MessageId" value="@message.MessageId">
+			</div>
+			<div class="form-group col col-sm">
+				<input type="submit" class="btn btn-primary" value="Comment">
+			</div>
+		</div>
+		</form>
+		<hr class="my-hr-3">
+	}
+}
+<a href="/logout">Logout</a>

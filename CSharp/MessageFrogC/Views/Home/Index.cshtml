@@ -1,0 +1,46 @@
+﻿		@model MyLoginView
+		<h3>Register</h3>
+		<form asp-action="AddUser" asp-controller="Home" method="post">
+			<div class="form-group">
+				<span asp-validation-for="Register.Name"></span>
+				<label asp-for="Register.Name"></label>
+				<input type="text" class="form-control" asp-for="Register.Name">
+			</div>
+			<div class="form-group">
+				<span asp-validation-for="Register.Email"></span>
+				<label>Email</label>
+				<input type="text" class="form-control" asp-for="Register.Email">
+			</div>
+			<div class="form-group">
+				<span asp-validation-for="Register.Password"></span>
+				<label>Password</label>
+				<input type="password" class="form-control" asp-for="Register.Password">
+			</div>
+			<div class="form-group">
+				<span asp-validation-for="Register.Confirm"></span>
+				<label>Confirm Password</label>
+				<input type="password" class="form-control" asp-for="Register.Confirm">
+			</div>
+			
+			<div class="form-group">
+				<input type="submit" class="btn btn-primary" value="Submit">
+			</div>
+		</form>
+	</div>
+	<div class="col ml-3">
+		<h3>Login</h3>
+		<form asp-action="Login" asp-controller="Home" method="post">
+			<div class="form-group">
+				<span asp-validation-for="Login.Email"></span>
+				<label>Email</label>
+				<input type="text" class="form-control" asp-for="Login.Email">
+			</div>
+			<div class="form-group">
+				<span asp-validation-for="Login.Password"></span>
+				<label>Password</label>
+				<input type="password" class="form-control" asp-for="Login.Password">
+			</div>
+			<div class="form-group">
+				<input type="submit" class="btn btn-primary" value="Submit">
+			</div>
+		</form>
