@@ -1,0 +1,115 @@
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_february_2019/cSharp/IntroToEntity/bin/Debug/netcoreapp2.1/IntroToEntity.deps.json
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_february_2019/cSharp/IntroToEntity/bin/Debug/netcoreapp2.1/IntroToEntity.runtimeconfig.json
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_february_2019/cSharp/IntroToEntity/bin/Debug/netcoreapp2.1/IntroToEntity.runtimeconfig.dev.json
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_february_2019/cSharp/IntroToEntity/bin/Debug/netcoreapp2.1/IntroToEntity.dll
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_february_2019/cSharp/IntroToEntity/bin/Debug/netcoreapp2.1/IntroToEntity.pdb
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_february_2019/cSharp/IntroToEntity/bin/Debug/netcoreapp2.1/IntroToEntity.Views.dll
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_february_2019/cSharp/IntroToEntity/bin/Debug/netcoreapp2.1/IntroToEntity.Views.pdb
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_february_2019/cSharp/IntroToEntity/obj/Debug/netcoreapp2.1/IntroToEntity.csprojAssemblyReference.cache
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_february_2019/cSharp/IntroToEntity/obj/Debug/netcoreapp2.1/IntroToEntity.csproj.CoreCompileInputs.cache
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_february_2019/cSharp/IntroToEntity/obj/Debug/netcoreapp2.1/IntroToEntity.RazorAssemblyInfo.cache
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_february_2019/cSharp/IntroToEntity/obj/Debug/netcoreapp2.1/IntroToEntity.RazorAssemblyInfo.cs
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_february_2019/cSharp/IntroToEntity/obj/Debug/netcoreapp2.1/IntroToEntity.AssemblyInfoInputs.cache
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_february_2019/cSharp/IntroToEntity/obj/Debug/netcoreapp2.1/IntroToEntity.AssemblyInfo.cs
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_february_2019/cSharp/IntroToEntity/obj/Debug/netcoreapp2.1/IntroToEntity.TagHelpers.input.cache
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_february_2019/cSharp/IntroToEntity/obj/Debug/netcoreapp2.1/IntroToEntity.TagHelpers.output.cache
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_february_2019/cSharp/IntroToEntity/obj/Debug/netcoreapp2.1/IntroToEntity.RazorCoreGenerate.cache
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_february_2019/cSharp/IntroToEntity/obj/Debug/netcoreapp2.1/Razor/Views/Home/Index.g.cshtml.cs
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_february_2019/cSharp/IntroToEntity/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_Layout.g.cshtml.cs
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_february_2019/cSharp/IntroToEntity/obj/Debug/netcoreapp2.1/Razor/Views/_ViewImports.g.cshtml.cs
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_february_2019/cSharp/IntroToEntity/obj/Debug/netcoreapp2.1/Razor/Views/_ViewStart.g.cshtml.cs
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_february_2019/cSharp/IntroToEntity/obj/Debug/netcoreapp2.1/IntroToEntity.RazorTargetAssemblyInfo.cache
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_february_2019/cSharp/IntroToEntity/obj/Debug/netcoreapp2.1/IntroToEntity.RazorTargetAssemblyInfo.cs
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_february_2019/cSharp/IntroToEntity/obj/Debug/netcoreapp2.1/IntroToEntity.Views.pdb
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_february_2019/cSharp/IntroToEntity/obj/Debug/netcoreapp2.1/IntroToEntity.dll
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_february_2019/cSharp/IntroToEntity/obj/Debug/netcoreapp2.1/IntroToEntity.pdb
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_february_2019/cSharp/IntroToEntity/obj/Debug/netcoreapp2.1/IntroToEntity.csproj.CopyComplete
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_february_2019/cSharp/IntroToEntity/obj/Debug/netcoreapp2.1/Razor/Views/Home/Show.g.cshtml.cs
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_february_2019/cSharp/IntroToEntity/obj/Debug/netcoreapp2.1/Razor/Views/Home/Cart.g.cshtml.cs
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_february_2019/cSharp/IntroToEntity/obj/Debug/netcoreapp2.1/Razor/Views/Home/NewProduct.g.cshtml.cs
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_february_2019/cSharp/IntroToEntity/obj/Debug/netcoreapp2.1/Razor/Views/Home/NewUser.g.cshtml.cs
+C:\Users\Geoff\Documents\GitHub\instructor_phil\cSharp\IntroToEntity\bin\Debug\netcoreapp2.1\IntroToEntity.deps.json
+C:\Users\Geoff\Documents\GitHub\instructor_phil\cSharp\IntroToEntity\bin\Debug\netcoreapp2.1\IntroToEntity.runtimeconfig.json
+C:\Users\Geoff\Documents\GitHub\instructor_phil\cSharp\IntroToEntity\bin\Debug\netcoreapp2.1\IntroToEntity.runtimeconfig.dev.json
+C:\Users\Geoff\Documents\GitHub\instructor_phil\cSharp\IntroToEntity\bin\Debug\netcoreapp2.1\IntroToEntity.dll
+C:\Users\Geoff\Documents\GitHub\instructor_phil\cSharp\IntroToEntity\bin\Debug\netcoreapp2.1\IntroToEntity.pdb
+C:\Users\Geoff\Documents\GitHub\instructor_phil\cSharp\IntroToEntity\bin\Debug\netcoreapp2.1\IntroToEntity.Views.dll
+C:\Users\Geoff\Documents\GitHub\instructor_phil\cSharp\IntroToEntity\bin\Debug\netcoreapp2.1\IntroToEntity.Views.pdb
+C:\Users\Geoff\Documents\GitHub\instructor_phil\cSharp\IntroToEntity\obj\Debug\netcoreapp2.1\IntroToEntity.csprojAssemblyReference.cache
+C:\Users\Geoff\Documents\GitHub\instructor_phil\cSharp\IntroToEntity\obj\Debug\netcoreapp2.1\IntroToEntity.csproj.CoreCompileInputs.cache
+C:\Users\Geoff\Documents\GitHub\instructor_phil\cSharp\IntroToEntity\obj\Debug\netcoreapp2.1\IntroToEntity.RazorAssemblyInfo.cache
+C:\Users\Geoff\Documents\GitHub\instructor_phil\cSharp\IntroToEntity\obj\Debug\netcoreapp2.1\IntroToEntity.RazorAssemblyInfo.cs
+C:\Users\Geoff\Documents\GitHub\instructor_phil\cSharp\IntroToEntity\obj\Debug\netcoreapp2.1\IntroToEntity.AssemblyInfoInputs.cache
+C:\Users\Geoff\Documents\GitHub\instructor_phil\cSharp\IntroToEntity\obj\Debug\netcoreapp2.1\IntroToEntity.AssemblyInfo.cs
+C:\Users\Geoff\Documents\GitHub\instructor_phil\cSharp\IntroToEntity\obj\Debug\netcoreapp2.1\IntroToEntity.TagHelpers.input.cache
+C:\Users\Geoff\Documents\GitHub\instructor_phil\cSharp\IntroToEntity\obj\Debug\netcoreapp2.1\IntroToEntity.TagHelpers.output.cache
+C:\Users\Geoff\Documents\GitHub\instructor_phil\cSharp\IntroToEntity\obj\Debug\netcoreapp2.1\IntroToEntity.RazorCoreGenerate.cache
+C:\Users\Geoff\Documents\GitHub\instructor_phil\cSharp\IntroToEntity\obj\Debug\netcoreapp2.1\Razor\Views\Home\Cart.g.cshtml.cs
+C:\Users\Geoff\Documents\GitHub\instructor_phil\cSharp\IntroToEntity\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+C:\Users\Geoff\Documents\GitHub\instructor_phil\cSharp\IntroToEntity\obj\Debug\netcoreapp2.1\Razor\Views\Home\NewProduct.g.cshtml.cs
+C:\Users\Geoff\Documents\GitHub\instructor_phil\cSharp\IntroToEntity\obj\Debug\netcoreapp2.1\Razor\Views\Home\NewUser.g.cshtml.cs
+C:\Users\Geoff\Documents\GitHub\instructor_phil\cSharp\IntroToEntity\obj\Debug\netcoreapp2.1\Razor\Views\Home\Show.g.cshtml.cs
+C:\Users\Geoff\Documents\GitHub\instructor_phil\cSharp\IntroToEntity\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
+C:\Users\Geoff\Documents\GitHub\instructor_phil\cSharp\IntroToEntity\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
+C:\Users\Geoff\Documents\GitHub\instructor_phil\cSharp\IntroToEntity\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
+C:\Users\Geoff\Documents\GitHub\instructor_phil\cSharp\IntroToEntity\obj\Debug\netcoreapp2.1\IntroToEntity.RazorTargetAssemblyInfo.cache
+C:\Users\Geoff\Documents\GitHub\instructor_phil\cSharp\IntroToEntity\obj\Debug\netcoreapp2.1\IntroToEntity.RazorTargetAssemblyInfo.cs
+C:\Users\Geoff\Documents\GitHub\instructor_phil\cSharp\IntroToEntity\obj\Debug\netcoreapp2.1\IntroToEntity.Views.pdb
+C:\Users\Geoff\Documents\GitHub\instructor_phil\cSharp\IntroToEntity\obj\Debug\netcoreapp2.1\IntroToEntity.dll
+C:\Users\Geoff\Documents\GitHub\instructor_phil\cSharp\IntroToEntity\obj\Debug\netcoreapp2.1\IntroToEntity.pdb
+C:\Users\Geoff\Documents\GitHub\instructor_phil\cSharp\IntroToEntity\obj\Debug\netcoreapp2.1\IntroToEntity.csproj.CopyComplete
+C:\Users\Geoff\Google Drive\Important Stuff\CD 2019 Stuff\04 - C Sharp\DummyProj\bin\Debug\netcoreapp2.1\IntroToEntity.deps.json
+C:\Users\Geoff\Google Drive\Important Stuff\CD 2019 Stuff\04 - C Sharp\DummyProj\bin\Debug\netcoreapp2.1\IntroToEntity.runtimeconfig.json
+C:\Users\Geoff\Google Drive\Important Stuff\CD 2019 Stuff\04 - C Sharp\DummyProj\bin\Debug\netcoreapp2.1\IntroToEntity.runtimeconfig.dev.json
+C:\Users\Geoff\Google Drive\Important Stuff\CD 2019 Stuff\04 - C Sharp\DummyProj\bin\Debug\netcoreapp2.1\IntroToEntity.dll
+C:\Users\Geoff\Google Drive\Important Stuff\CD 2019 Stuff\04 - C Sharp\DummyProj\bin\Debug\netcoreapp2.1\IntroToEntity.pdb
+C:\Users\Geoff\Google Drive\Important Stuff\CD 2019 Stuff\04 - C Sharp\DummyProj\bin\Debug\netcoreapp2.1\IntroToEntity.Views.dll
+C:\Users\Geoff\Google Drive\Important Stuff\CD 2019 Stuff\04 - C Sharp\DummyProj\bin\Debug\netcoreapp2.1\IntroToEntity.Views.pdb
+C:\Users\Geoff\Google Drive\Important Stuff\CD 2019 Stuff\04 - C Sharp\DummyProj\obj\Debug\netcoreapp2.1\IntroToEntity.csprojAssemblyReference.cache
+C:\Users\Geoff\Google Drive\Important Stuff\CD 2019 Stuff\04 - C Sharp\DummyProj\obj\Debug\netcoreapp2.1\IntroToEntity.csproj.CoreCompileInputs.cache
+C:\Users\Geoff\Google Drive\Important Stuff\CD 2019 Stuff\04 - C Sharp\DummyProj\obj\Debug\netcoreapp2.1\IntroToEntity.RazorAssemblyInfo.cache
+C:\Users\Geoff\Google Drive\Important Stuff\CD 2019 Stuff\04 - C Sharp\DummyProj\obj\Debug\netcoreapp2.1\IntroToEntity.RazorAssemblyInfo.cs
+C:\Users\Geoff\Google Drive\Important Stuff\CD 2019 Stuff\04 - C Sharp\DummyProj\obj\Debug\netcoreapp2.1\IntroToEntity.AssemblyInfoInputs.cache
+C:\Users\Geoff\Google Drive\Important Stuff\CD 2019 Stuff\04 - C Sharp\DummyProj\obj\Debug\netcoreapp2.1\IntroToEntity.AssemblyInfo.cs
+C:\Users\Geoff\Google Drive\Important Stuff\CD 2019 Stuff\04 - C Sharp\DummyProj\obj\Debug\netcoreapp2.1\IntroToEntity.TagHelpers.input.cache
+C:\Users\Geoff\Google Drive\Important Stuff\CD 2019 Stuff\04 - C Sharp\DummyProj\obj\Debug\netcoreapp2.1\IntroToEntity.TagHelpers.output.cache
+C:\Users\Geoff\Google Drive\Important Stuff\CD 2019 Stuff\04 - C Sharp\DummyProj\obj\Debug\netcoreapp2.1\IntroToEntity.RazorCoreGenerate.cache
+C:\Users\Geoff\Google Drive\Important Stuff\CD 2019 Stuff\04 - C Sharp\DummyProj\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+C:\Users\Geoff\Google Drive\Important Stuff\CD 2019 Stuff\04 - C Sharp\DummyProj\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
+C:\Users\Geoff\Google Drive\Important Stuff\CD 2019 Stuff\04 - C Sharp\DummyProj\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
+C:\Users\Geoff\Google Drive\Important Stuff\CD 2019 Stuff\04 - C Sharp\DummyProj\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
+C:\Users\Geoff\Google Drive\Important Stuff\CD 2019 Stuff\04 - C Sharp\DummyProj\obj\Debug\netcoreapp2.1\IntroToEntity.RazorTargetAssemblyInfo.cache
+C:\Users\Geoff\Google Drive\Important Stuff\CD 2019 Stuff\04 - C Sharp\DummyProj\obj\Debug\netcoreapp2.1\IntroToEntity.RazorTargetAssemblyInfo.cs
+C:\Users\Geoff\Google Drive\Important Stuff\CD 2019 Stuff\04 - C Sharp\DummyProj\obj\Debug\netcoreapp2.1\IntroToEntity.Views.pdb
+C:\Users\Geoff\Google Drive\Important Stuff\CD 2019 Stuff\04 - C Sharp\DummyProj\obj\Debug\netcoreapp2.1\IntroToEntity.dll
+C:\Users\Geoff\Google Drive\Important Stuff\CD 2019 Stuff\04 - C Sharp\DummyProj\obj\Debug\netcoreapp2.1\IntroToEntity.pdb
+C:\Users\Geoff\Google Drive\Important Stuff\CD 2019 Stuff\04 - C Sharp\DummyProj\obj\Debug\netcoreapp2.1\IntroToEntity.csproj.CopyComplete
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\Storefront\bin\Debug\netcoreapp2.1\IntroToEntity.deps.json
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\Storefront\bin\Debug\netcoreapp2.1\IntroToEntity.runtimeconfig.json
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\Storefront\bin\Debug\netcoreapp2.1\IntroToEntity.runtimeconfig.dev.json
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\Storefront\bin\Debug\netcoreapp2.1\IntroToEntity.dll
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\Storefront\bin\Debug\netcoreapp2.1\IntroToEntity.pdb
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\Storefront\bin\Debug\netcoreapp2.1\IntroToEntity.Views.dll
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\Storefront\bin\Debug\netcoreapp2.1\IntroToEntity.Views.pdb
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\Storefront\obj\Debug\netcoreapp2.1\IntroToEntity.csprojAssemblyReference.cache
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\Storefront\obj\Debug\netcoreapp2.1\IntroToEntity.csproj.CoreCompileInputs.cache
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\Storefront\obj\Debug\netcoreapp2.1\IntroToEntity.RazorAssemblyInfo.cache
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\Storefront\obj\Debug\netcoreapp2.1\IntroToEntity.RazorAssemblyInfo.cs
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\Storefront\obj\Debug\netcoreapp2.1\IntroToEntity.AssemblyInfoInputs.cache
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\Storefront\obj\Debug\netcoreapp2.1\IntroToEntity.AssemblyInfo.cs
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\Storefront\obj\Debug\netcoreapp2.1\IntroToEntity.TagHelpers.input.cache
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\Storefront\obj\Debug\netcoreapp2.1\IntroToEntity.TagHelpers.output.cache
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\Storefront\obj\Debug\netcoreapp2.1\IntroToEntity.RazorCoreGenerate.cache
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\Storefront\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\Storefront\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\Storefront\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\Storefront\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\Storefront\obj\Debug\netcoreapp2.1\IntroToEntity.RazorTargetAssemblyInfo.cache
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\Storefront\obj\Debug\netcoreapp2.1\IntroToEntity.RazorTargetAssemblyInfo.cs
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\Storefront\obj\Debug\netcoreapp2.1\IntroToEntity.Views.pdb
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\Storefront\obj\Debug\netcoreapp2.1\IntroToEntity.dll
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\Storefront\obj\Debug\netcoreapp2.1\IntroToEntity.pdb
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\Storefront\obj\Debug\netcoreapp2.1\IntroToEntity.csproj.CopyComplete
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\Storefront\obj\Debug\netcoreapp2.1\Razor\Views\Home\Orders.g.cshtml.cs
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\Storefront\obj\Debug\netcoreapp2.1\Razor\Views\Home\Products.g.cshtml.cs
+C:\Users\Geoff\Documents\GitHub\brundiges_stuff\CSharp\Storefront\obj\Debug\netcoreapp2.1\Razor\Views\Home\Users.g.cshtml.cs

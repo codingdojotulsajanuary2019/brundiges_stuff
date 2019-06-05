@@ -114,14 +114,8 @@ namespace MessageFrogC.Controllers
 			IEnumerable<Message> Messages = _context.Messages.OrderByDescending(c => c.CreatedAt)
 				.Include(m => m.User).Include(m => m.Comments).Include(m => m.User);
 
-			// System.Console.WriteLine("Rendering " + Messages.Count() + " messages");
-			foreach (Message message in Messages)
-			{
-				foreach (Comment comment in message.Comments)
-				{
-					System.Console.WriteLine("Comment User: " + comment.User.Name);
-				}
-			}
+			System.Console.WriteLine("Rendering " + Messages.Count() + " messages");
+
 			MyMessageView MyMessages = new MyMessageView();
 			MyMessages.Messages = Messages.ToList();
 

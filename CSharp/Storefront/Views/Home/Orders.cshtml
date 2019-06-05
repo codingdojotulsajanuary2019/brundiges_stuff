@@ -1,0 +1,52 @@
+﻿<div class="col col-sm-3 mb-3">
+	<h2>Navigation</h2>
+	<div class="ml-2">
+		<a href="/">Dashboar</a>
+		<br>
+		<a href="/products">Products</a>
+		<br>
+		<a href="/orders">Orders</a>
+		<br>
+		<a href="/customers">Customers</a>
+		<br>
+		<input type="text" class="form-group" placeholder="Search...">
+	</div>
+</div>
+<div class="col col-md mb-3">
+	<h2>Orders:</h2>
+
+	@model NiceStoreView;
+	<form asp-action="NewOrder" asp-controller="Home" method="post">
+		<div class="form-group">
+			<span asp-validation-for="NewOrder.Quantity"></span>
+			<label asp-for="NewOrder.Quantity">Quantity</label>
+			<input asp-for="NewOrder.Quantity" class="form-control" value="1">
+		</div>
+		<div class="form-group">
+			<label asp-for="NewOrder.UserId">User</label>
+			<select asp-for="NewOrder.UserId" class="form-control">
+				@{foreach(User user in Model.Users){
+				<option value="@user.UserId">@user.Name</option>
+				}}
+			</select>
+		</div>
+		<div class="form-group">
+			<label asp-for="NewOrder.ProductId">Product</label>
+			<select asp-for="NewOrder.ProductId" class="form-control">
+				@{foreach(Product product in Model.Products){
+				<option value="@product.ProductId">@product.Name (@product.stock)</option>
+				}}
+			</select>
+		</div>
+		<div class="form-group">
+			<button class="btn btn-info">Submit Order</button>
+		</div>
+	</form>
+
+	<h4>All Orders:</h4>
+	@{foreach (Order order in Model.Orders)
+	{
+		<p>@order.User.Name ordered @order.Quantity @order.Product.Name for $@order.TotalPrice on @order.CreatedAt</p>
+	}}
+	
+</div>

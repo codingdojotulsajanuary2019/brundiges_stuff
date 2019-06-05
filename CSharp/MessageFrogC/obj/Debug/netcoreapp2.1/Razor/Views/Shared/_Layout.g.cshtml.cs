@@ -54,7 +54,7 @@ using MessageFrogC.Models;
             WriteLiteral("<!DOCTYPE html>\r\n<html>\r\n");
             EndContext();
             BeginContext(25, 919, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9d81ea17dd3f44fea146327898cf14de", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c4332a1adce445e6a7a8664742482d1f", async() => {
                 BeginContext(31, 906, true);
                 WriteLiteral(@"
 	<meta charset=""UTF-8"">
@@ -90,7 +90,7 @@ using MessageFrogC.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(946, 244, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ae89cec402714b89941da861766cf61f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fe3b3b0df75b4c31910f53b68f58faee", async() => {
                 BeginContext(952, 186, true);
                 WriteLiteral("\r\n\t<div class=\"container\">\r\n\t\t<div class=\"row\">\r\n\t\t\t<div class=\"col mb-3\">\r\n\t\t\t\t<h2>MessageFrog C</h2>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t\t<div class=\"row\">\r\n\t\t\t<div class=\"col col-md-7 ml-3\">\r\n\t\t\t\t");
                 EndContext();

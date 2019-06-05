@@ -1,0 +1,37 @@
+﻿<div class="col col-sm-3 mb-3">
+	<h2>Navigation</h2>
+	<div class="ml-2">
+		<a href="/">Dashboar</a>
+		<br>
+		<a href="/products">Products</a>
+		<br>
+		<a href="/orders">Orders</a>
+		<br>
+		<a href="/customers">Customers</a>
+		<br>
+		<input type="text" class="form-group" placeholder="Search...">
+	</div>
+</div>
+<div class="col col-md mb-3">
+	<h2>Dashboar</h2>
+	<h4>Latest Products:</h4>
+	<div class="row">
+		@{foreach (Product product in Model.Products)
+		{
+		<div class="col col-sm-3">
+			<img src="@product.Url" alt="@product.Name">
+			<p>@product.Name (@product.stock left)</p>
+		</div>
+		}}
+	</div>
+	<h4>Latest Users</h4>
+@{foreach (User user in Model.Users)
+{
+	<p>@user.Name joined the store @user.Span</p>
+}}
+<h4>Latest Orders</h4>
+@{foreach (Order order in Model.Orders)
+{
+	<p>@order.User.Name ordered @order.Quantity of item @order.Product.Name @order.Span</p>
+}}
+</div>

@@ -150,9 +150,15 @@ client.query(q, (err, data) => {
         crossotron(0);
         // console.log("Local data:", localData);
     }
-    client.end();
-    console.log("\nSolution:");
-    console.log(solvedPuzzle);
+		client.end();
+		console.log("\nFor puzzle:");
+		console.log(puzzle);
+		if(solvedPuzzle.length > 0){
+			console.log("\nFound solution:");
+			console.log(solvedPuzzle[1]);
+		} else {
+			console.log("Found no solutions!");
+		}
 });
 console.log("Crooked as a crocodile");
 
